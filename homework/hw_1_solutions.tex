@@ -1,0 +1,199 @@
+\documentclass[12pt]{article}
+
+% Fonts and typesetting
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{microtype}
+\usepackage{booktabs}
+
+% More generous page layout
+\usepackage{geometry}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\usepackage{amsmath}
+%\usepackage{amssymb}
+
+\usepackage{float}
+
+\title{STA 711 HW 1 Solutions}
+
+\author{Ciaran Evans}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+\item Suppose that $X \sim Poisson(\lambda)$.
+
+\begin{enumerate}
+\item We use the fact that $e^\lambda = \sum \limits_{x=0}^{\infty} \dfrac{\lambda^{x}}{x!}$.
+
+\begin{align*}
+\mathbb{E}[X] &= \sum \limits_{x=0}^{\infty} x \frac{\lambda^x e^{-\lambda}}{x!} = \sum \limits_{x=1}^{\infty} x \frac{\lambda^x e^{-\lambda}}{x!} \\ 
+&= e^{-\lambda} \lambda \sum \limits_{x=1}^{\infty} \frac{\lambda^{x-1}}{(x-1)!} = e^{-\lambda} \lambda \sum \limits_{x=0}^{\infty} \frac{\lambda^{x}}{x!} \\
+&= e^{-\lambda} \lambda e^{\lambda} \\
+&= \lambda
+\end{align*}
+
+\begin{align*}
+\mathbb{E}[X^2] &= \sum \limits_{x=0}^{\infty} x^2 \frac{\lambda^x e^{-\lambda}}{x!} = \sum \limits_{x=1}^{\infty} x^2 \frac{\lambda^x e^{-\lambda}}{x!} \\
+&= \lambda e^{-\lambda} \sum \limits_{x=1}^{\infty} x^2 \frac{\lambda^{x-1}}{x!} \\
+&= \lambda e^{-\lambda} \sum \limits_{x=1}^{\infty} x \frac{\lambda^{x-1}}{(x-1)!} \\
+&= \lambda e^{-\lambda} \left( \sum \limits_{x=1}^{\infty} (x-1) \frac{\lambda^{x-1}}{(x-1)!} +  \sum \limits_{x=1}^{\infty} \frac{\lambda^{x-1}}{(x-1)!}\right) \\
+&= \lambda e^{-\lambda} \left( \lambda e^{\lambda} + e^{\lambda} \right) \\
+&= \lambda^2 + \lambda
+\end{align*}
+
+Thus, $Var(X) = \mathbb{E}[X^2] - \mathbb{E}[X] = \lambda$.
+
+\item 
+
+\begin{align*}
+\mathbb{E}[e^{tX}] = \sum \limits_{x=0}^{\infty} e^{tx} \frac{\lambda^x e^{-\lambda}}{x!} = e^{-\lambda} \sum \limits_{x=0}^\infty \frac{(\lambda e^t)^x}{x!} = e^{-\lambda} e^{\lambda e^t} = \exp\{\lambda (e^t - 1)\}
+\end{align*}
+
+\item From (b), $M_X(t) = \exp\{\lambda (e^t - 1)\}$, so
+\begin{align*}
+M'_X(t) = \exp\{\lambda (e^t - 1)\} \lambda e^t
+\end{align*}
+and
+\begin{align*}
+M''_X(t) = \exp\{\lambda (e^t - 1)\} \lambda^2 e^{2t} + \exp\{\lambda (e^t - 1)\} \lambda
+\end{align*}
+At $t = 0$, we get
+\begin{align*}
+\mathbb{E}[X] &= M_X'(0) = \lambda \\
+\mathbb{E}[X^2] &= M_X''(0) = \lambda^2 + \lambda
+\end{align*}
+and thus $Var(X) = \mathbb{E}[X^2] - \mathbb{E}[X] = \lambda$.
+
+\end{enumerate}
+
+\item Suppose that $X \sim Poisson(\lambda)$ and $Y \sim Poisson(\mu)$ are independent. Let $Z = X + Y$.
+
+\begin{enumerate}
+\item We use the fact that the MGF for the sum of independent random variables is the product of their individual MGFs:
+\begin{align*}
+M_Z(t) &= M_X(t)M_Y(t) = \exp\{\lambda (e^t - 1)\}\exp\{\mu (e^t - 1)\} \\
+&= \exp\{(\lambda + \mu) (e^t - 1)\}
+\end{align*}
+This is the MGF of a $Poisson(\lambda + \mu)$ distribution, and so by the uniqueness of MGFs we conclude $X + Y \sim Poisson(\lambda + \mu)$.
+
+\item 
+
+\begin{align*}
+P(X = x | Z = n) &= \frac{P(X = x, Z = n)}{P(Z = n)} = \frac{P(X = x, Y = n - x)}{P(Z = n)} \\
+&= \dfrac{\dfrac{\lambda^x e^{-\lambda}}{x!} \cdot \dfrac{\mu^{n-x} e^{-\mu}}{(n-x)!}}{\dfrac{(\lambda + \mu)^n e^{-(\lambda + \mu)}}{n!}} \\
+&= \frac{n!}{x!(n - x)!} \left( \frac{\lambda}{\lambda + \mu} \right)^x \left( 1 - \frac{\lambda}{\lambda + \mu} \right)^{n-x}
+\end{align*}
+
+This is the pmf of a $Binomial\left(n, \frac{\lambda}{\lambda + \mu} \right)$ distribution.
+
+\end{enumerate}
+
+
+\item The joint pdf is
+
+$$f(x,y) = \begin{cases} 
+c(x + 2y) & 0 < y < 1, 0 < x < 2 \\
+0 & \text{else}
+\end{cases}$$
+
+\begin{enumerate}
+
+\item To find $c$, we note that $f(x,y)$ must integrate to 1.
+
+\begin{align*}
+c \int \limits_0^1 \int \limits_0^2 (x + 2y) dx dy &= c \int \limits_0^1 \int \limits_0^2 x dx dy + c \int \limits_0^1 \int \limits_0^2 2y dx dy \\
+&= 2c + 2c
+\end{align*}
+
+so we conclude that $c= 1/4$.
+
+\item 
+
+\begin{align*}
+f(x) = \int \limits_0^1 f(x,y) dy = \frac{1}{4} \int \limits_0^1 (x + 2y) dy = \frac{x + 1}{4}
+\end{align*}
+
+\item 
+
+\begin{align*}
+P(Z < t) &= P(9 \leq (1 + X)^2t) = P(\frac{3}{\sqrt{t}} - 1 \leq X) = \int \limits_{3/\sqrt{t} - 1}^1 (x + 1)/4 dx \\
+&= \frac{1}{2} - \frac{9}{8t}
+\end{align*}
+
+Then, differentiating,
+\begin{align*}
+f_Z(t) = \frac{9}{8 t^2}
+\end{align*}
+for $t \in [9/4, 9]$
+
+\end{enumerate}
+
+\item 
+
+\item 
+
+\item 
+
+\begin{enumerate}
+\item Since $F_X$ is a monotonic, continuous cdf, then $F_X$ and $F_X^{-1}$ are both strictly increasing, and
+\begin{align*}
+P(X \leq t) = P(F_X^{-1}(U) \leq t) = P(U \leq F_X(t)) = F_X(t),
+\end{align*}
+where the final step follows from the cdf of a $Uniform(0,1)$ distribution.
+
+\item See the R part below.
+
+\end{enumerate}
+
+\item 
+
+\begin{enumerate}
+\item
+
+\begin{align*}
+Cov\left( \sum \limits_{i=1}^m a_i X_i, \sum \limits_{j=1}^n b_j Y_j \right) &= \mathbb{E}\left[ \left( \sum \limits_{i=1}^m a_i X_i - \sum \limits_{i=1}^m a_i \mathbb{E}[X_i] \right)\left(\sum \limits_{j=1}^n b_j Y_j - \sum \limits_{j=1}^n b_j \mathbb{E}[Y_j] \right) \right] \\
+&= \mathbb{E}\left[ \left( \sum \limits_{i=1}^m a_i (X_i - \mathbb{E}[X_i])  \right)\left(\sum \limits_{j=1}^n b_j (Y_j - \mathbb{E}[Y_j]) \right) \right] \\
+&= \mathbb{E}\left[ \sum \limits_{i=1}^m \sum \limits_{j=1}^n a_i b_j  (X_i - \mathbb{E}[X_i])(Y_j - \mathbb{E}[Y_j]) \right] \\
+&= \sum \limits_{i=1}^m \sum \limits_{j=1}^n a_i b_j  \mathbb{E}\left[ (X_i - \mathbb{E}[X_i])(Y_j - \mathbb{E}[Y_j])\right] \\
+&= \sum \limits_{i=1}^m \sum \limits_{j=1}^n a_i b_j  Cov(X_i, Y_j)
+\end{align*}
+
+\item 
+
+\begin{align*}
+Var \left( \sum \limits_{i=1}^m X_i \right) &= Cov \left( \sum \limits_{i=1}^m X_i, \sum \limits_{i=1}^m X_i \right) \\ 
+&= \sum \limits_{i=1}^m \sum \limits_{j=1}^m Cov(X_i, X_j) \\
+&= \sum \limits_{i=1}^m Var(X_i) + \sum \limits_{i=1}^m \sum \limits_{j \neq i} Cov(X_i, X_j) \\
+&= \sum \limits_{i=1}^m Var(X_i) + 2 \sum \limits_{i < j} Cov(X_i, X_j)
+\end{align*}
+\end{enumerate}
+
+\item $X_1,...,X_n \overset{iid}{\sim} Uniform(0, 1)$, and $Y = \max\{X_1,...,X_n\}$
+
+\begin{enumerate}
+
+\item For $t \in [0, 1]$:
+
+\begin{align*}
+P(Y \leq t) &= P(X_1,...,X_n \leq t) = \prod \limits_{i=1}^n P(X_i \leq t) \text{ (independence) } \\
+&= t^n
+\end{align*}
+Then, the pdf is 
+\begin{align*}
+f_Y(t) = nt^{n-1}
+\end{align*}
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

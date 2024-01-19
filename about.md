@@ -61,7 +61,11 @@ If you have any questions about the course (or statistics in general!), please d
 
 Keep in mind that debugging software issues can take time, so make sure to start the assignments early in case you run into problems.
 
-**Office hours:** TBA
+**Office hours:** (Manchester 329)
+
+9:30 - 10:30 Monday
+12 - 1 Wednesday
+12 - 1 Thursday
 
 
 ## Course policies
