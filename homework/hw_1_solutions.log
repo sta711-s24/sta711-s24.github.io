@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.13)  16 JAN 2024 16:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.13)  21 JAN 2024 15:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -694,35 +694,60 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.6pt on input line 105.
  [2] [3]
-Overfull \hbox (19.36719pt too wide) detected at line 168
+Overfull \hbox (5.70746pt too wide) detected at line 166
 []
  []
 
-[4] [5] (./hw_1_solutions.aux)
+[4] [5]
+Overfull \hbox (19.36719pt too wide) detected at line 246
+[]
+ []
+
+[6]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 12.0pt on input line 281.
+
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 287.
+
+
+Overfull \hbox (16.6259pt too wide) detected at line 294
+[]
+ []
+
+
+Overfull \hbox (53.56279pt too wide) detected at line 300
+[]
+ []
+
+[7] [8] (./hw_1_solutions.aux)
 Package rerunfilecheck Info: File `hw_1_solutions.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 14316 strings out of 478994
- 205916 string characters out of 5858184
+ 14361 strings out of 478994
+ 206558 string characters out of 5858184
  535545 words of memory out of 5000000
- 31475 multiletter control sequences out of 15000+600000
- 450655 words of font info for 133 fonts, out of 8000000 for 9000
+ 31478 multiletter control sequences out of 15000+600000
+ 456681 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 82i,12n,88p,300b,531s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/u
-sr/local/texlive/2021/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/loc
+ 82i,12n,88p,300b,549s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/us
+r/local/texlive/2021/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/loc
 al/texlive/2021/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/local/tex
 live/2021/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/local/texlive/
 2021/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/local/texlive/2021/tex
 mf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/local/texlive/2021/texmf-dist
 /fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2021/texmf-dist/fonts
 /type1/public/newtx/txsys.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/p
-ublic/newtx/ztmr.pfb>
-Output written on hw_1_solutions.pdf (5 pages, 94951 bytes).
+ublic/newtx/ztmr.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/new
+tx/ztmri.pfb>
+Output written on hw_1_solutions.pdf (8 pages, 144032 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
- 27 named destinations out of 1000 (max. 500000)
- 30721 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 127 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
+ 39 named destinations out of 1000 (max. 500000)
+ 36865 words of extra memory for PDF output out of 42996 (max. 10000000)
 

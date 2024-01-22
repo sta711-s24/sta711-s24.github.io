@@ -139,7 +139,85 @@ for $t \in [9/4, 9]$
 
 \item 
 
+\begin{enumerate}
+\item
+
+\begin{align*}
+\mathbb{E}[Y] &= \int \limits_0^\infty \frac{1}{\Gamma(k) \theta^k} y^k e^{-y/\theta} dy \\
+&= \frac{1}{\Gamma(k) \theta^k} \int \limits_0^\infty y^k e^{-y/\theta} dy
+\end{align*}
+Now, note that $y^k e^{-y/\theta}$ is the kernel of a $Gamma(k+1, \theta)$ distribution, and so we must have
+\begin{align*}
+\int \limits_0^\infty y^k e^{-y/\theta} dy = \theta^{k+1} \Gamma(k+1)
+\end{align*}
+Therefore,
+\begin{align*}
+\mathbb{E}[Y] = \theta \frac{\Gamma(k+1)}{\Gamma(k)}
+\end{align*}
+It then only remains to show that $\frac{\Gamma(k+1)}{\Gamma(k)} = k$. We will use integration by parts; recall that $\int u dv = uv - \int v du$. Then, with $u = y^k$ and $v = -e^{-y}$,
+\begin{align*}
+\Gamma(k+1) = \int \limits_0^\infty y^k e^{-y} dy = -y^k e^{-y} \biggr\lvert_0^\infty + \int \limits_0^\infty e^{-y} ky^{k-1} dy = k \Gamma(k)
+\end{align*}
+
 \item 
+
+\begin{align*}
+\mathbb{E}[Y^2] = \frac{1}{\Gamma(k)\theta^k} \int \limits_0^\infty y^{k+1} e{-y/\theta} dy = \frac{\theta^{k+2} \Gamma(k+2)}{\theta^k \Gamma(k)} = \theta^2 \frac{\Gamma(k+2)}{\Gamma(k)} = \theta^2 (k+1)k,
+\end{align*}
+where similar to part (a), we have recognized $y^{k+1} e{-y/\theta}$ as the kernel of a $Gamma(k+2, \theta)$ distribution. Then,
+
+\begin{align*}
+Var(Y) = \mathbb{E}[Y^2] - \mathbb{E}[Y]^2 = \theta^2k^2 - \theta^2k - \theta^2k^2 = k\theta^2
+\end{align*}
+
+\item 
+
+\begin{align*}
+M_Y(t) = \mathbb{E}[e^{tY}] &= \frac{1}{\Gamma(k) \theta^k} \int \limits_0^\infty e^{ty} y^{k-1} e^{-y/\theta} dy \\
+&= \frac{1}{\Gamma(k) \theta^k} \int \limits_0^\infty y^{k-1} \exp\left\lbrace -\left(\frac{1}{\theta} - t\right)y \right\rbrace dy \\
+&= \frac{1}{\Gamma(k) \theta^k} \cdot \Gamma(k) \left(\frac{1}{\theta} - t\right)^{-k},
+\end{align*}
+recognizing $y^{k-1} \exp\left\lbrace -\left(\frac{1}{\theta} - t\right)y \right\rbrace$ as the kernel of a Gamma distribution. Simplifying,
+\begin{align*}
+M_Y(t) = (1 - \theta t)^{-k}
+\end{align*}
+
+\item Using part (c), the mgf for one of the variables is $M(t) = \left(1 - 2t \right)^{-1/2}$. Since we have a sum of independent variables, the mgf for the sum is
+\begin{align*}
+M_{\sum_i Y_i}(t) = \prod \limits_i \left(1 - 2t \right)^{-1/2} = \left(1 - 2t \right)^{-n/2}
+\end{align*}
+which is the mgf for a $Gamma(n/2, 2)$ distribution (also known as a $\chi^2_n$ distribution!)
+
+\end{enumerate}
+
+\item 
+
+\begin{enumerate}
+\item 
+
+\begin{align*}
+\mathbb{E}[Y] = \mathbb{E}[\mathbb{E}[Y|\lambda]] = \mathbb{E}[\lambda] = \frac{1}{\psi} \cdot \mu \psi = \mu,
+\end{align*}
+using the fact that $\lambda$ follows a Gamma distribution, and the mean of a Gamma distribution calculated in 4(a).
+
+\item
+
+\begin{align*}
+Var(Y) &= \mathbb{E}[Var(Y|\lambda)] + Var(\mathbb{E}[Y|\lambda]) \\
+&= \mathbb{E}[\lambda] + Var(\lambda) \\
+&= \mu + \mu^2 \psi
+\end{align*}
+
+\item (It helps to use the fact that $\Gamma(y+1) = y!$)
+
+\begin{align*}
+P(Y = y) &= \int \limits_0^\infty P(Y = y | \lambda) f(\lambda) d \lambda \\
+&= \int \limits_0^\infty \frac{\lambda^y e^{-\lambda}}{y!} \cdot \frac{\lambda^{\frac{1}{\psi} - 1}e^{\frac{-\lambda}{\mu \psi}}}{\Gamma(1/\psi)(\mu \psi)^{1/\psi}} d \lambda \\
+&= \int \limits_0^\infty \frac{\lambda^y e^{-\lambda}}{\Gamma(y+1)} \cdot \frac{\lambda^{\frac{1}{\psi} - 1}e^{\frac{-\lambda}{\mu \psi}}}{\Gamma(1/\psi)(\mu \psi)^{1/\psi}} d \lambda \\
+\end{align*}
+
+
+\end{enumerate}
 
 \item 
 
@@ -190,6 +268,39 @@ P(Y \leq t) &= P(X_1,...,X_n \leq t) = \prod \limits_{i=1}^n P(X_i \leq t) \text
 Then, the pdf is 
 \begin{align*}
 f_Y(t) = nt^{n-1}
+\end{align*}
+
+\item 
+
+\begin{align*}
+\mathbb{E}[Y] = \int \limits_{0}^{1} t \cdot n t^{n-1} dt = \frac{n}{n+1} t^{n+1} \biggr\lvert_0^1 = \frac{n}{n+1}
+\end{align*}
+
+\item We want to find the pdf of $X_{(k)}$; we begin by finding the cdf, then differentiate.
+
+To find $P(X_{(k)} \leq t)$, note that $X_{(k)} \leq t$ requires \textit{at least} $k$ of $X_1,...,X_n$ to be $\leq t$ -- and, possibly, all $n$ are $\leq t$. That is,
+
+\begin{align*}
+P(X_{(k)} \leq t) &= \sum \limits_{i=k}^n P(\text{exactly } i \text{ of } X_1,...,X_n \leq t) \\
+&= \sum \limits_{i=k}^n { n \choose i }  F_X(t)^{i}(1 - F_X(t))^{n-i} \\
+&= \sum \limits_{i=k}^n { n \choose i} t^{i}(1 - t)^{n-i} \ \text{ (Uniform distribution)}
+\end{align*}
+
+Differentiating,
+
+\begin{align*}
+f(t) &= \sum \limits_{i=k}^n \left[ {n \choose i} i t^{i-1}(1 - t)^{n-i} - {n \choose i} (n-i) t^i (1-t)^{n-i-1} \right] \\
+&= {n \choose k} k t^{k-1}(1 - t)^{n-k} + \sum \limits_{i=k+1}^n{n \choose i} i t^{i-1}(1 - t)^{n-i} - \sum \limits_{i=k}^n {n \choose i} (n-i) t^i (1-t)^{n-i-1}
+\end{align*}
+
+Since $n - i = 0$ when $i = n$, then we have
+\begin{align*}
+f(t) &= {n \choose k} k t^{k-1}(1 - t)^{n-k} + \sum \limits_{i=k+1}^n{n \choose i} i t^{i-1}(1 - t)^{n-i} - \sum \limits_{i=k}^{n-1} {n \choose i} (n-i) t^i (1-t)^{n-i-1} \\
+&= {n \choose k} k t^{k-1}(1 - t)^{n-k} + \sum \limits_{i=k}^{n-1}{n \choose i+1} (i+1) t^{i}(1 - t)^{n-i-1} - \sum \limits_{i=k}^{n-1} {n \choose i} (n-i) t^i (1-t)^{n-i-1}
+\end{align*}
+Since ${n \choose i+1} (i+1) = {n \choose i} (n-i)$, the second and third terms cancel out, and we are left with
+\begin{align*}
+f(t) = {n \choose k} k t^{k-1}(1 - t)^{n-k}
 \end{align*}
 
 \end{enumerate}
