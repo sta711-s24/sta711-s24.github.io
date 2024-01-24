@@ -10,6 +10,7 @@ January 22
 
 January 24
 : Maximum likelihood estimation
+  : [Slides](https://sta711-s24.github.io/slides/lecture_4.pdf)
 
 : Casella and Berger 6.3, 7.2.2
 
