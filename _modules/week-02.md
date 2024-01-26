@@ -16,5 +16,7 @@ January 24
 
 January 26
 : Maximum likelihood estimation for logistic regression
+  : [Slides](https://sta711-s24.github.io/slides/lecture_5.pdf)
   
 : **Homework 2 released**{: .label .label-yellow }
+  : [HW 2](https://sta711-s24.github.io/homework/HW2.pdf)
