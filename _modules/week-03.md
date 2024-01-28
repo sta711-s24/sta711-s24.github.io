@@ -2,7 +2,7 @@
 title: Fisher information
 ---
 
-January 23
+January 29
 : Newton's method for logistic regression
   : [Slides](https://sta711-s24.github.io/slides/lecture_6.pdf)
   
@@ -14,10 +14,10 @@ January 23
   
 : Dunn and Smyth 4.8
 
-January 25
+January 31
 : Fisher information
 
-January 27
+February 2
 : Fisher scoring
 
 : **Homework 3 released**{: .label .label-yellow }
