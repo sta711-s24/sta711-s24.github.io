@@ -15,7 +15,8 @@ January 29
 : Dunn and Smyth 4.8
 
 January 31
-: Fisher information
+: Newton's method for logistic regression
+  : [Class activity](https://sta711-s24.github.io/class_activities/ca_lecture_7.html)
 
 February 2
 : Fisher scoring
