@@ -16,11 +16,13 @@ January 29
 
 January 31
 : Newton's method for logistic regression
-  : [Class activity](https://sta711-s24.github.io/class_activities/ca_lecture_7.html)
+  : [Class activity](https://sta711-s24.github.io/class_activities/ca_lecture_7.html),  [Class activity solutions](https://sta711-s24.github.io/class_activities/ca_lecture_7_solutions.html)
 
 February 2
-: Fisher scoring
+: Fisher information
+  : [Slides](https://sta711-s24.github.io/slides/lecture_8.pdf)
 
 : **Homework 3 released**{: .label .label-yellow }
+  : [HW 3](https://sta711-s24.github.io/homework/HW3.pdf)
 
 : Dunn and Smyth 6.6, 6.7
