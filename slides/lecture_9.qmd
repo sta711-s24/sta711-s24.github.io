@@ -1,0 +1,27 @@
+---
+title: "Lecture 9: Fisher information and Fisher scoring"
+format: 
+  revealjs:
+    theme: theme.scss
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## Recap: Fisher information
+
+## Properties
+
+Under appropriate regularity conditions,
+
+$$\mathbb{E}[U(\theta) | \theta] = 0$$
+
+## Properties
+
+Under appropriate regularity conditions,
+
+$$\mathcal{I}(\theta) = -\mathbb{E}\left[ \frac{\partial^2}{\partial \theta^2} \ell(\theta | \mathbf{Y}) \ \biggr\lvert \ \theta  \right]$$
+
+## Fisher scoring
+
+## IRLS for logistic regression
