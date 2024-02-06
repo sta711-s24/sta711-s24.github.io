@@ -1,0 +1,113 @@
+---
+title: "Lecture 10: Inference with logistic regression models"
+format: 
+  revealjs:
+    theme: theme.scss
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## Recall: the Titanic data
+
+```{r, include=F}
+titanic <- read.csv("https://sta711-s24.github.io/homework/Titanic.csv")
+```
+
+Data on 891 passengers on the *Titanic*. Variables include:
+
+* `Survived`
+* `Pclass`
+* `Sex`
+* `Age`
+
+## Logistic regression model
+
+$$Survived_i \sim Bernoulli(p_i)$$
+
+$$\log \left( \frac{p_i}{1 - p_i} \right) = \beta_0 + \beta_1 Class2_i + \beta_3 Class3_i + \beta_4 Male_i + \beta_5 Age_i$$
+
+## Fitting the model in R
+
+```{r}
+m1 <- glm(Survived ~ as.factor(Pclass) + Sex + Age, 
+          family = binomial, data = titanic)
+summary(m1)$coefficients
+```
+
+Suppose I want to know whether there is a relation between age and the probability of survival. What hypotheses would I test?
+
+## Wald tests for single coefficients
+
+```{r}
+m1 <- glm(Survived ~ as.factor(Pclass) + Sex + Age, 
+          family = binomial, data = titanic)
+summary(m1)$coefficients
+```
+
+## Another question
+
+```{r}
+m1 <- glm(Survived ~ as.factor(Pclass) + Sex + Age, 
+          family = binomial, data = titanic)
+summary(m1)$coefficients
+```
+
+Suppose I want to know whether there is a relation between *passenger class* and the probability of survival. What hypotheses would I test?
+
+## Recall: nested tests for linear regression
+
+## Logistic regression model performance
+
+```
+Coefficients:
+                    Estimate Std. Error z value Pr(>|z|)    
+(Intercept)         3.777013   0.401123   9.416  < 2e-16 ***
+as.factor(Pclass)2 -1.309799   0.278066  -4.710 2.47e-06 ***
+as.factor(Pclass)3 -2.580625   0.281442  -9.169  < 2e-16 ***
+Sexmale            -2.522781   0.207391 -12.164  < 2e-16 ***
+Age                -0.036985   0.007656  -4.831 1.36e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 964.52  on 713  degrees of freedom
+Residual deviance: 647.28  on 709  degrees of freedom
+  (177 observations deleted due to missingness)
+AIC: 657.28
+
+Number of Fisher Scoring iterations: 5
+```
+
+## Nested logistic regression models
+
+```{r, echo=T}
+m1 <- glm(Survived ~ as.factor(Pclass) + Sex + Age, 
+          family = binomial, data = titanic)
+
+m1$deviance
+```
+
+```{r, echo=T}
+m2 <- glm(Survived ~ Sex + Age, 
+          family = binomial, data = titanic)
+m2$deviance
+```
+
+## Preview: likelihood ratio test
+
+## Preview: likelihood ratio test
+
+```{r, echo=T}
+m1 <- glm(Survived ~ as.factor(Pclass) + Sex + Age, 
+          family = binomial, data = titanic)
+
+
+m2 <- glm(Survived ~ Sex + Age, 
+          family = binomial, data = titanic)
+
+pchisq(m2$deviance - m1$deviance, df=2, lower.tail=F)
+```
+
+
