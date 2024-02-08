@@ -1,0 +1,21 @@
+---
+title: "Lecture 11: Probability inequalities"
+format: 
+  revealjs:
+    theme: theme.scss
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## What we need to do
+
+## Markov's inequality
+
+**Theorem:** Let $Y$ be a non-negative random variable, and suppose that $\mathbb{E}[Y]$ exists. Then for any $t > 0$, 
+
+$$P(Y \geq t) \leq \frac{\mathbb{E}[Y]}{t}$$
+
+## Chebyshev's inequality
+
+**Theorem:** Let $Y$ be a random variable, and let $\mu = \mathbb{E}[Y]$ and $\sigma^2 = Var(Y)$. 

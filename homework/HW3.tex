@@ -100,7 +100,7 @@ where $Y_i \in \mathbb{R}$ is the $i$th response, $X_i \in \mathbb{R}^p$ is the 
 
 \item To estimate the coefficient vector $\beta$, we will use maximum likelihood estimation. Generally, there is no closed-form solution, so we must resort to an iterative algorithm like Newton's method. Show that
 \begin{align*}
-U(\beta | X, Y) &= X^T(Y - \mu) \\
+U(\beta | X, Y) &= \frac{1}{\phi} X^T(Y - \mu) \\
 {\bf H}(\beta | X, Y) &= -X^T W X
 \end{align*}
 where $X$ is the design matrix, $Y = (Y_1,...,Y_n)^T \in \mathbb{R}^n$ is the vector of observed responses, $\mu = (\mu_1,...,\mu_n)^T$ with $\mu_i = g^{-1}(\beta^T X_i)$, and $W = \frac{1}{\phi^2} \text{diag}(Var(Y_i))$.
