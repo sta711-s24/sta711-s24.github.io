@@ -18,4 +18,19 @@ $$P(Y \geq t) \leq \frac{\mathbb{E}[Y]}{t}$$
 
 ## Chebyshev's inequality
 
-**Theorem:** Let $Y$ be a random variable, and let $\mu = \mathbb{E}[Y]$ and $\sigma^2 = Var(Y)$. 
+**Theorem:** Let $Y$ be a random variable, and let $\mu = \mathbb{E}[Y]$ and $\sigma^2 = Var(Y)$. Then
+
+$$P(|Y - \mu| \geq t) \leq \frac{\sigma^2}{t^2}$$
+
+With your neighbor, apply Markov's inequality to prove Chebyshev's inequality.
+
+## Cauchy-Schwarz inequality
+
+**Theorem:** For any two random variables $X$ and $Y$,
+$$|\mathbb{E}[XY]| \leq \mathbb{E}|XY| \leq (\mathbb{E}[X^2])^{1/2}(\mathbb{E}[Y^2])^{1/2}$$
+
+**Example:** The *correlation* between $X$ and $Y$ is defined by
+
+$$\rho(X, Y) = \dfrac{Cov(X, Y)}{\sqrt{Var(X)} \sqrt{Var(Y)}}$$
+
+Using the Cauchy-Schwarz inequality, we can show that $-1 \leq \rho(X, Y) \leq 1$.

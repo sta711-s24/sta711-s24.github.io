@@ -14,5 +14,9 @@ February 7
 
 February 9
 : Beginning probability inequalities
+  : [Slides](https://sta711-s24.github.io/slides/lecture_11.pdf)
+  
+: Casella and Berger 3.6, 3.8.2, 4.7
 
 : **Homework 4 released**{: .label .label-yellow }
+  : [HW 3](https://sta711-s24.github.io/homework/HW4.html)
