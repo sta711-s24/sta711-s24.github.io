@@ -10,7 +10,7 @@ February 5
 
 February 7
 : Inference for logistic regression models
-  : [Slides](https://sta711-s24.github.io/slides/lecture_10.pdf), [Class activity](https://sta711-s24.github.io/class_activities/ca_lecture_10.html)
+  : [Slides](https://sta711-s24.github.io/slides/lecture_10.pdf), [Class activity](https://sta711-s24.github.io/class_activities/ca_lecture_10.html), [Class activity solutions](https://sta711-s24.github.io/class_activities/ca_lecture_10_solutions.html)
 
 February 9
 : Beginning probability inequalities
