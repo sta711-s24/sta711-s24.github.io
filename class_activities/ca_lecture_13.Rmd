@@ -43,7 +43,7 @@ for(j in 1:nsim){
 :::{.question}
 #### Question 1
 
-Let $\varepsilon = 0.03$. What fraction of the time do the sample means fall within $\varepsilon$ of the true mean (here $\mu = 0.5$)? That is, what is the empirical estimate of $P(|\bar{X}_n - \mu| \geq 0.5)$?
+Let $\varepsilon = 0.03$. What fraction of the time do the sample means fall within $\varepsilon$ of the true mean (here $\mu = 0.5$)? That is, what is the empirical estimate of $P(|\bar{X}_n - \mu| \geq 0.03)$?
 :::
 
 :::{.question}
