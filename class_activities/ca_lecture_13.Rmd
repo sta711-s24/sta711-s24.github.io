@@ -49,7 +49,7 @@ Let $\varepsilon = 0.03$. What fraction of the time do the sample means fall wit
 :::{.question}
 #### Question 2
 
-Repeat Question 1 with different values of $n$, and plot the probability as $n$ increases. Verify that the probability approaches 1.
+Repeat Question 1 with different values of $n$, and plot the probability as $n$ increases. Verify that the probability approaches 0.
 :::
 
 
