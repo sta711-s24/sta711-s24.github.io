@@ -1,0 +1,19 @@
+---
+title: "Lecture 14: Continuing convergence of random variables"
+format: 
+  revealjs:
+    theme: theme.scss
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## Relationships between types of convergence
+
+* If $X_n \overset{a.s.}{\to} X$, then $X_n \overset{p}{\to} X$
+* If $X_n \overset{p}{\to} X$, then $X_n \overset{d}{\to} X$
+* If $X_n \overset{d}{\to} c$, where $c$ is a constant, then $X_n \overset{p}{\to} c$
+
+## Practice question
+
+Suppose that $X_1, X_2, ... \overset{iid}{\sim} Uniform(0, 1)$. Then $X_{(n)} \overset{p}{\to} 1$.
