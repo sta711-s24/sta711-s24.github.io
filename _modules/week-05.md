@@ -10,7 +10,7 @@ February 12
 
 February 14
 : Convergence of random variables
-  : [Slides](https://sta711-s24.github.io/slides/lecture_13.pdf), [Class activity](https://sta711-s24.github.io/class_activities/ca_lecture_13.html)
+  : [Slides](https://sta711-s24.github.io/slides/lecture_13.pdf), [Class activity](https://sta711-s24.github.io/class_activities/ca_lecture_13.html), [Class activity solutions](https://sta711-s24.github.io/class_activities/ca_lecture_13_solutions.html)
 
 : Casella and Berger 5.5
 

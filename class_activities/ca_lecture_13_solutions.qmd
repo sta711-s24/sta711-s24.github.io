@@ -1,0 +1,221 @@
+---
+title: "Class Activity Solutions"
+format: 
+  html:
+    embed-resources: true
+editor: source
+author: "Ciaran Evans"
+---
+
+## WLLN and CLT
+
+1.
+
+```{r}
+set.seed(23)
+
+n <- 20
+nsim <- 1000
+means <- rep(NA, nsim)
+
+for(j in 1:nsim){
+  x <- runif(n)
+  means[j] <- mean(x)
+}
+
+mean(abs(means - 0.5) > 0.03)
+```
+
+With $n = 20$, the sample mean $\overline{X}$ is at least 0.03 away from the true mean 0.5 about 65% of the time.
+
+2.
+
+
+```{r}
+set.seed(23)
+
+ns <- c(10, 20, 50, 100, 200, 500)
+res <- rep(NA, length(ns))
+nsim <- 1000
+
+for(i in 1:length(ns)){
+  n <- ns[i]
+  means <- rep(NA, nsim)
+
+  for(j in 1:nsim){
+    x <- runif(n)
+    means[j] <- mean(x)
+  }
+  
+  res[i] <- mean(abs(means - 0.5) > 0.03)
+}
+
+plot(ns, res, xlab = "Sample size (n)", ylab = "P(|Xbar - 0.5| > 0.03)")
+```
+
+3.
+
+```{r}
+n <- 2
+nsim <- 1000
+means <- rep(NA, nsim)
+
+for(i in 1:nsim){
+  x <- rpois(n, 1)
+  means[i] <- mean(x)
+}
+
+cdf_pts <- seq(-4, 4, 0.01)
+plot(cdf_pts, ecdf(sqrt(n) * (means - 1) / sqrt(1))(cdf_pts), type="l", 
+     xlab = "x", ylab = "CDF")
+points(cdf_pts, pnorm(cdf_pts, mean=0, sd=1), type="l", col="red")
+```
+
+A normal distribution isn't a perfect approximation here; the distribution of $\overline{X}$ is discrete, and only tends to take a few different values. Nevertheless, the normal distribution does capture the general shape pretty well.
+
+4.
+
+```{r}
+n <- 5
+nsim <- 1000
+means <- rep(NA, nsim)
+
+for(i in 1:nsim){
+  x <- rpois(n, 1)
+  means[i] <- mean(x)
+}
+
+cdf_pts <- seq(-4, 4, 0.01)
+plot(cdf_pts, ecdf(sqrt(n) * (means - 1) / sqrt(1))(cdf_pts), type="l", 
+     xlab = "x", ylab = "CDF", main = "n = 5")
+points(cdf_pts, pnorm(cdf_pts, mean=0, sd=1), type="l", col="red")
+```
+
+```{r}
+n <- 10
+nsim <- 1000
+means <- rep(NA, nsim)
+
+for(i in 1:nsim){
+  x <- rpois(n, 1)
+  means[i] <- mean(x)
+}
+
+cdf_pts <- seq(-4, 4, 0.01)
+plot(cdf_pts, ecdf(sqrt(n) * (means - 1) / sqrt(1))(cdf_pts), type="l", 
+     xlab = "x", ylab = "CDF", main = "n = 10")
+points(cdf_pts, pnorm(cdf_pts, mean=0, sd=1), type="l", col="red")
+```
+
+
+```{r}
+n <- 30
+nsim <- 1000
+means <- rep(NA, nsim)
+
+for(i in 1:nsim){
+  x <- rpois(n, 1)
+  means[i] <- mean(x)
+}
+
+cdf_pts <- seq(-4, 4, 0.01)
+plot(cdf_pts, ecdf(sqrt(n) * (means - 1) / sqrt(1))(cdf_pts), type="l", 
+     xlab = "x", ylab = "CDF", main = "n = 30")
+points(cdf_pts, pnorm(cdf_pts, mean=0, sd=1), type="l", col="red")
+```
+
+As $n$ increases, the normal distribution becomes a better approximation for the distribution of $\overline{X}$.
+
+5. Here is an $Exponential(1)$ distribution; we can see the normal approximation still performs well:
+
+```{r}
+n <- 30
+nsim <- 1000
+means <- rep(NA, nsim)
+
+for(i in 1:nsim){
+  x <- rexp(n, 1)
+  means[i] <- mean(x)
+}
+
+cdf_pts <- seq(-4, 4, 0.01)
+plot(cdf_pts, ecdf(sqrt(n) * (means - 1) / sqrt(1))(cdf_pts), type="l", 
+     xlab = "x", ylab = "CDF", main = "n = 30")
+points(cdf_pts, pnorm(cdf_pts, mean=0, sd=1), type="l", col="red")
+```
+
+## Practice question
+
+6.
+
+```{r}
+set.seed(23)
+
+ns <- c(10, 20, 50, 100, 200, 500)
+res <- rep(NA, length(ns))
+nsim <- 1000
+epsilon <- 0.03
+
+for(i in 1:length(ns)){
+  n <- ns[i]
+  maxes <- rep(NA, nsim)
+
+  for(j in 1:nsim){
+    x <- runif(n)
+    maxes[j] <- max(x)
+  }
+  
+  res[i] <- mean(abs(maxes - 1) > epsilon)
+}
+
+plot(ns, res, xlab = "Sample size (n)", ylab = "P(|X(n) - 1| > epsilon)")
+```
+
+
+7. See class notes from February 16.
+
+## Practice question
+
+8.
+
+```{r}
+n <- 30
+nsim <- 1000
+means <- rep(NA, nsim)
+
+for(i in 1:nsim){
+  x <- runif(n, 0, 1)
+  maxes[i] <- max(x)
+}
+
+cdf_pts <- seq(0, 4, 0.01)
+plot(cdf_pts, ecdf(n * (1 - maxes))(cdf_pts), type="l", 
+     xlab = "x", ylab = "CDF", main = "n = 30")
+points(cdf_pts, pexp(cdf_pts), type="l", col="red")
+```
+
+9. We want to show that $F_{n(1 - X_{(n)})}(t) \to F_Y(t)$ for all points $t$ where $F_Y$ is continuous, where $F_Y$ is the cdf of an $Exponential(1)$ distribution. Since $X_{(n)}$ is the maximum of $n$ iid $U(0,1)$ random variables, then
+
+$$F_{n(1 - X_{(n)})}(t) = P(n(1 - X_{(n)}) \leq t) = 1 - P\left(X_{(n)} \leq 1 - \frac{t}{n}\right) = 1 - (1 - t/n)^n$$
+
+Now we use the fact that $\lim \limits_{n \to \infty} (1 + x/n)^n = e^x$ to conclude that 
+
+$$\lim \limits_{n \to \infty} F_{n(1 - X_{(n)})}(t) = 1 - e^{-t},$$
+
+which we recognize as the CDF of an $Exponential(1)$ distribution.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

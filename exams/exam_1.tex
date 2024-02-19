@@ -1,0 +1,122 @@
+\documentclass[11pt]{article}
+\usepackage{url}
+\usepackage{alltt}
+\usepackage{bm}
+\usepackage{bbm}
+\linespread{1}
+\textwidth 6.5in
+\oddsidemargin 0.in
+\addtolength{\topmargin}{-1in}
+\addtolength{\textheight}{2in}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+
+\begin{center}
+\Large
+STA 711 Exam 1\\
+\normalsize
+\vspace{5mm}
+\end{center}
+
+\noindent \textbf{Due:} Monday, February 26, 11:00am on Canvas.\\ 
+
+\noindent \textbf{Instructions:} Submit your work as a single PDF. For this assignment, you may include written work by scanning it and incorporating it into the PDF.\\
+
+\noindent \textbf{Rules:} This is an open-book, open-notes exam. You may:
+\begin{itemize}
+\item Use any resources from the course (the textbook, the course website, class notes, previous assignments, etc.)
+\item Email me, or come to office hours, with specific questions (I may be somewhat less helpful than for regular assignments)
+\item Use one or two days from your bank of extension days, if you need more time on the exam
+\end{itemize}
+You may \textit{not}:
+\begin{itemize}
+\item Use the internet to look up any questions on the exam
+\item Use any resources outside of the course (other textbooks, notes from other universities, etc.)
+\item Use WolframAlpha or any generative AI to help solve the problems
+\item Discuss the exam with anyone else
+\end{itemize}
+
+\newpage
+
+\section*{Maximum likelihood estimation}
+
+\begin{enumerate}
+\item Let $Y_1,...,Y_n$ be an iid sample from a distribution with pdf 
+$$f(y | \lambda, \sigma) = \dfrac{\sigma^{1/\lambda}}{\lambda} \exp \left\lbrace -\left(1 + \frac{1}{\lambda}\right) \log(y) \right\rbrace \mathbbm{1}\{ y \geq \sigma \},$$
+where $\lambda, \sigma > 0$. Find the maximum likelihood estimators of $\lambda$ and $\sigma$.\\
+
+\hspace{1cm}
+
+\item Let $Y_1,...,Y_n$ be iid random variables with pdf
+$$f(y|\mu, \sigma^2) = \frac{1}{y \sqrt{2 \pi \sigma^2}} \exp \left\lbrace -\frac{1}{2\sigma^2}(\log(y) - \mu)^2 \right\rbrace$$
+where $\sigma^2 > 0$, $y > 0$, and $\mu \in \mathbb{R}$. Find the maximum likelihood estimators $\widehat{\mu}$ and $\widehat{\sigma}^2$.\\
+
+\hspace{1cm}
+
+\item A random variable $X$ follows a \textit{categorical} distribution with $k$ categories if $X \in \{1,...,k\}$ and the probability that $X$ is in category $j$ is $P(X = j) = p_j$, with each $p_j \in [0,1]$ and $\sum \limits_{j=1}^k p_j = 1$. We write $X \sim Categorical(p_1,...,p_k)$. (This is just a generalization of the Bernoulli to more than two categories).\\
+
+\noindent Suppose that we observe $X_1,...,X_n \overset{iid}{\sim} Categorical(p_1,...,p_k)$. Let $n_j = \sum \limits_{i=1}^n  \mathbbm{1}\{X_i = j\}$ (the number of observations in category $j$), and note that $\sum_j n_j = n$. Find the maximum likelihood estimators $\widehat{p}_j$ of each probability $p_j$. (\textit{Hint:} You will need to add a constraint that $\sum_j \widehat{p}_j = 1$. Lagrange multipliers may be helpful.)\\
+
+\hspace{1cm}
+
+\item Let $X_1,...,X_n$ be an iid sample from a distribution with pdf
+$$f(x|\theta) = \frac{4 \theta^4}{x^5} \mathbbm{1}\{x \geq \theta\}.$$ Find the maximum likelihood estimator $\widehat{\theta}$.
+
+\end{enumerate}
+
+\newpage
+
+\section*{A Poisson hurdle model}
+
+Poisson regression models are commonly used when the response is a \textit{count} variable (i.e., $Y_i$ takes values in $\{0, 1, 2, ...\}$). On HW 3, you showed that the Poisson distribution is an example of an EDM, and so the same general model fitting approach, that we used for logistic regression, can be applied to Poisson data.\\
+
+\noindent However, the Poisson distribution is restrictive about the frequency of 0s: if $Y \sim Poisson(\lambda)$, then $P(Y = 0) = e^{-\lambda}$. If our data have more 0s than a Poisson distribution allows, one option is to fit a \textit{hurdle} model, which models the 0s and the non-zeros separately. In the following questions, we will build towards defining a hurdle model and finding the score and information.\\
+
+\begin{enumerate}
+\item[5.] Let $V$ be a random variable with support $\{1, 2, 3, ... \}$ (all positive integers). We say that $V$ follows a \textit{positive Poisson} distribution, and write $V \sim PosPoisson(\lambda)$, if
+$$P(V = v) = \frac{\lambda^v e^{-\lambda}}{v! (1 - e^{-\lambda})} \hspace{0.5cm} \text{ for } v = 1, 2, 3, ...$$
+(In other words, $V$ is the conditional distribution of a Poisson restricted to non-zero values).\\
+
+\noindent Show that the positive Poisson distribution is an example of an EDM by finding $\phi$, $\theta$, $\kappa(\theta)$, and $a(v, \phi)$.\\
+
+\vspace{1cm}
+
+\item[6.] Suppose that $V \sim PosPoisson(\lambda)$. Using question 5 and properties of EDMs from HW 3, calculate $\mathbb{E}[V]$ and $Var(V)$.\\
+
+\vspace{1cm}
+
+\item[7.] Let $Y_i \in \{0, 1, 2, ...\}$ be a count variable of interest, and $X_i = (1, X_{i,1},...,X_{i,k})^T \in \mathbb{R}^{k+1}$ be a vector of covariates. Suppose we observe independent samples $(X_1, Y_1),...,(X_n, Y_n)$ from the following model:
+\begin{align*}
+P(Y_i = 0) &= 1 - p_i \\
+Y_i | (Y_i > 0) &\sim PosPoisson(\lambda_i)\\
+\log \left( \frac{p_i}{1-p_i} \right) &= \gamma^T X_i \\
+\log(\lambda_i) &= \beta^T X_i,
+\end{align*}
+where $\gamma, \beta \in \mathbb{R}^{k+1}$ are vectors of coefficients. That is, our model contains two separate pieces: one piece to model the probability that $Y_i = 0$, and another piece to model the non-zero values of $Y_i$. This is called a \textit{hurdle} model, and is useful for handling count variables with excess 0s (aka \textit{zero inflation}). Our goal is to calculate maximum likelihood estimates $\widehat{\gamma}$ and $\widehat{\beta}$ of the coefficient vectors.
+
+\begin{enumerate}
+\item Write down the log-likelihood $\ell(\gamma, \beta | X, Y)$ for the hurdle model. \textit{Hint:} it may help to view the pmf of $Y_i$ as a piecewise function:
+\begin{align*}
+P(Y_i = y) = \begin{cases}
+1 - p_i & y = 0 \\
+p_i \dfrac{\lambda_i^y e^{-\lambda_i}}{y! (1 - e^{-\lambda_i})} & y > 0
+\end{cases}
+\end{align*}
+
+\item Find the score function $U(\gamma, \beta | X, Y)$. \textit{Hint:} 
+$$U(\gamma, \beta | X, Y) = \begin{bmatrix}
+\dfrac{\partial \ell}{\partial \gamma} \\
+\dfrac{\partial \ell}{\partial \beta}
+\end{bmatrix} \in \mathbb{R}^{2(k+1)}$$
+
+\item  Find the Fisher information matrix $\mathcal{I}(\gamma, \beta | X, Y)$. \textit{Hint:} $\mathcal{I}(\gamma, \beta | X, Y) \in \mathbb{R}^{2(k+1) \times 2(k+1)}$
+\end{enumerate}
+
+\end{enumerate}
+
+
+\end{document}
