@@ -1,0 +1,27 @@
+---
+title: "Lecture 16: Asymptotic normality of the MLE"
+format: 
+  revealjs:
+    theme: theme.scss
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+
+## Convergence of the MLE
+
+
+## Intermediate steps
+
+Using the WLLN and the CLT, argue that:
+
+* $\frac{1}{n} \ell_n^{''}(\theta) \overset{p}{\to} - I_1(\theta)$
+* $\frac{1}{\sqrt{n}} \ell_n^{'}(\theta) \overset{d}{\to} N(0, I_1(\theta))$
+
+## Putting everything together
+
+## Regularity conditions
+
+
+
