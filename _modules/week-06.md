@@ -14,3 +14,7 @@ February 21
 
 February 23
 : Wald tests
+  : [Slides](https://sta711-s24.github.io/slides/lecture_17.pdf)
+
+: **Homework 5 released**{: .label .label-yellow }
+  : [HW 5](https://sta711-s24.github.io/homework/HW5.pdf)

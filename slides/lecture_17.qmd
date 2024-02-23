@@ -1,0 +1,31 @@
+---
+title: "Lecture 17: Wald Tests"
+format: 
+  revealjs:
+    theme: theme.scss
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+
+## Last time
+
+## Where we are going
+
+## Hypothesis test for a population mean
+
+Let $Y_1, Y_2,...$ be an iid sample from a population with mean $\mu$ and variance $\sigma^2$. We want to test
+
+$H_0: \mu = \mu_0 \hspace{1cm} H_A: \mu \neq \mu_0$
+
+## Hypothesis test for a population proportion
+
+Let $Y_1, Y_2,...\overset{iid}{\sim} Bernoulli(p)$. We want to test
+
+$H_0: p = p_0 \hspace{1cm} H_A: p \neq p_0$
+
+## Wald test for one parameter
+
+
+

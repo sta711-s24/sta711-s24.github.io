@@ -1,0 +1,213 @@
+\documentclass[11pt]{article}
+\usepackage{url}
+\usepackage{alltt}
+\usepackage{bm}
+\usepackage{bbm}
+\linespread{1}
+\textwidth 6.5in
+\oddsidemargin 0.in
+\addtolength{\topmargin}{-1in}
+\addtolength{\textheight}{2in}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+
+\begin{center}
+\Large
+STA 711 Homework 5\\
+\normalsize
+\vspace{5mm}
+\end{center}
+
+\noindent \textbf{Due:} Friday, March 8, 11:00am on Canvas.\\ 
+
+\noindent \textbf{Instructions:} Submit your work as a single PDF. For this assignment, you may include written work by scanning it and incorporating it into the PDF. Include all R code needed to reproduce your results in your submission.
+
+\section*{Convergence of random variables}
+
+In this section, you will practice proving limits for sequences of random variables. As a reminder, here are some of the common techniques for proving convergence:
+
+\begin{itemize}
+\item For convergence in probability: if you have a sequence of means, try to apply the WLLN
+\item For convergence in probability: if you can easily calculate a mean or variance, try bounding probabilities with Markov's or Chebyshev's inequality
+\item For convergence in probability: if calculating means or variances is hard, try calculating the probabilities directly for the convergence
+\item For convergence in distribution to a normal or $\chi^2$: check if the central limit theorem applies
+\item For convergence in distribution: if CLT is not the right strategy, try calculating the cdfs directly
+\end{itemize}
+
+\begin{enumerate}
+\item For each of the following sequences $\{Y_n\}$, show that $Y_n \overset{p}{\to} 1$. Then write a simulation in R demonstrating the convergence.
+\begin{enumerate}
+\item $Y_n = 1 + n X_n$, where $X_n \sim Bernoulli(1/n)$
+
+\item $Y_n = \frac{1}{n} \sum \limits_{i=1}^n X_i^2$, where $X_i \overset{iid}{\sim} N(0, 1)$
+\end{enumerate}
+
+\item Suppose that $Y_1, Y_2,... \overset{iid}{\sim} Beta(1, \beta)$. Find a value of $\nu$ such that $n^{\nu}(1 - Y_{(n)})$ converges in distribution. Then write a simulation in R demonstrating the convergence. (\textit{Hint:} if you are struggling to find $\nu$, starting with simulations may be helpful)
+
+%\item Suppose that $Y_1, Y_2,... \overset{iid}{\sim} Exponential(1)$. Find a sequence $a_n$ such that $Y_{(n)} - a_n$ converges in distribution.
+
+\item In this problem, we will prove part of the continuous mapping theorem. Let $\{Y_n\}$ be a sequence of real-valued random variables such that $Y_n \overset{p}{\to} Y$ for some random variable $Y$. Let $g$ be a continuous function; recall that $g$ is continuous if for all $\varepsilon > 0$, there exists some $\delta > 0$ such that $|g(x) - g(y)| < \varepsilon$ whenever $|x - y| < \delta$. Prove that $g(Y_n) \overset{p}{\to} g(Y)$.
+
+\item Consider the simple linear regression model
+$$Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i$$
+where the $X_i$ are known constants, and the $\varepsilon_i$ are iid with $\mathbb{E}[\varepsilon_i] = 0$ and $Var(\varepsilon_i) = \sigma^2$. It can be shown that the least squares estimate of $\beta_1$ is
+$$\widehat{\beta}_1 = \beta_1 + \dfrac{\sum \limits_{i=1}^n (X_i - \overline{X}_n) \varepsilon_i}{\sum \limits_{i=1}^n (X_i - \overline{X}_n)^2}.$$
+Show that if $\sum \limits_{i=1}^n (X_i - \overline{X}_n)^2 \to \infty$ as $n \to \infty$, then $\widehat{\beta}_1 \overset{p}{\to} \beta$. (Note: no distribution for $\varepsilon_i$ or $Y_i$ has been assumed, so $\widehat{\beta}_1$ cannot be treated as a maximum likelihood estimator).
+
+\end{enumerate}
+
+\section*{Multivariate normal distributions}
+
+\noindent The multivariate normal distribution will appear frequently in 711, for example as the asymptotic distribution of our coefficient estimates $\widehat{\beta}$. The purpose of this section is to derive a basic property of the multivariate normal distribution that we use regularly, for example in constructing our Wald test statistic.\\
+
+
+\noindent One way to define a multivariate normal distribution is with its \textit{moment generating function} (MGF).  Let $X \in \mathbb{R}^k$ be a random vector. The (multivariate) moment generating function $M_X(t)$ of $X$ is defined by
+$$M_X(t) = \mathbb{E}[e^{t^T X}],$$
+where $t \in \mathbb{R}^k$. As with univariate MGFs, if $M_X(t) = M_Y(t)$ for all $t$, then the two random variables $X$ and $Y$ have the same distribution.\\
+
+\noindent We say that the random vector $X \in \mathbb{R}^k$ follows a multivariate normal distribution with mean $\mu \in \mathbb{R}^k$ and variance matrix $\Sigma \in \mathbb{R}^{k \times k}$, and write $X \sim N(\mu, \Sigma)$, if 
+$$M_X(t) = e^{t^T \mu} e^{\frac{1}{2} t^T \Sigma t}.$$\\
+
+\noindent We will also make use of the following properties:
+
+\begin{itemize}
+
+\item For any random vector $X$, the covariance matrix $\Sigma = Var(X)$ is positive semi-definite (you may use this without proof)
+
+\item If $\Sigma$ is a positive semi-definite matrix, then there exists a unique positive semi-definite matrix $\Sigma^{\frac{1}{2}}$ such that $\Sigma = \Sigma^{\frac{1}{2}} \Sigma^{\frac{1}{2}}$ (you may use this without proof)
+
+\item $Z \sim N(0, {\bf I})$ if and only if $Z = (Z_1,...,Z_q)^T \overset{iid}{\sim} N(0, 1)$ (you may use this without proof).
+
+\end{itemize}
+
+\begin{enumerate}
+\item[6.] An important property of multivariate normal random variables is that if $X \sim N(\mu, \Sigma)$, then
+$$\bm{a} + \bm{B} X \sim N(\bm{a} + \bm{B} \mu, \bm{B} \Sigma \bm{B}^T),$$
+where $\bm{a} \in \mathbb{R}^m$ and $\bm{B} \in \mathbb{R}^{m \times k}$. Our goal is to use MGFs to prove this property.
+
+\begin{enumerate}
+\item Show that for any random vector $X$ in $\mathbb{R}^k$, the MGF of $Y = \bm{a} + \bm{B} X$ is given by
+$$M_Y(t) = e^{t^T \bm{a}} M_X(\bm{B}^T t).$$
+
+\item Using (a), show that if $X \sim N(\mu, \Sigma)$, then $\bm{a} + \bm{B} X \sim N(\bm{a} + \bm{B} \mu, \bm{B} \Sigma \bm{B}^T)$.
+\end{enumerate}
+
+
+\item[7.] Now let us prove some further properties of multivariate normal distributions:
+
+\begin{enumerate}
+
+\item Show that if $X \sim N(\mu, \Sigma)$, then $\Sigma^{-\frac{1}{2}} (X - \mu) \sim N(0, {\bf I})$, where ${\bf I}$ is the identity matrix.
+
+\item Show that $X \sim N(\mu, \Sigma)$ if and only if $X = \mu + \Sigma^{\frac{1}{2}} Z$ where $Z \sim N(0, {\bf I})$.
+
+\item Let $X \sim N(\mu, \Sigma)$, where $X \in \mathbb{R}^q$. Suppose that for some $1 \leq p < q$, $\Sigma$ can be partitioned as
+$$\Sigma = \begin{pmatrix}
+\Sigma_{11} & 0_{p \times (q - p)} \\
+0_{(q - p) \times p} & \Sigma_{22}
+\end{pmatrix},$$
+where $\Sigma_{11}$ is $p \times p$, $\Sigma_{22}$ is $(q - p) \times (q - p)$, and $0_{m \times n}$ denotes the matrix of zeros of the specified dimensions. Similarly partition 
+$$X = \begin{pmatrix}
+X_{(1)} \\
+X_{(2)}
+\end{pmatrix} \hspace{1cm} \mu = \begin{pmatrix}
+\mu_{(1)} \\
+\mu_{(2)}
+\end{pmatrix},$$
+into vectors of length $p$ and $q - p$. Prove that 
+$$X_{(1)} \sim N(\mu_{(1)}, \Sigma_{11}), \hspace{0.5cm} X_{(2)} \sim N(\mu_{(2)}, \Sigma_{22}),$$
+and $X_{(1)}$ and $X_{(2)}$ are independent.
+
+\item Using (c), conclude that if $X = (X_1,...,X_q)^T \sim N(\mu, \Sigma)$, then the entries $X_i$ and $X_j$ are independent \textit{if and only} if $\Sigma_{ij} = Cov(X_i, X_j) = 0$.
+
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+
+\section*{Normal distributions and the Wald test}
+
+Suppose that $\widehat{\theta}$ is some estimator of a parameter of interest $\theta \in \mathbb{R}^d$. We want to test the hypotheses
+$$H_0: \theta = \theta_0 \hspace{0.5cm} \text{vs.} \hspace{0.5cm} H_A: \theta \neq \theta_0.$$
+If $\widehat{\theta}$ is approximately normal, then we can use the Wald test (often $\widehat{\theta}$ will be the MLE, but the Wald test can be applied to any asymptotically normal estimator, not just to the MLE). Formally, suppose that
+$$\sqrt{n}(\widehat{\theta} - \theta) \overset{d}{\to} N(0, V),$$
+and let $\widehat{V}$ be some estimator of the covariance matrix $V$, such that $\widehat{V} \overset{p}{\to} V$. Then the Wald test statistic is
+$$W = n(\widehat{\theta} - \theta_0)^T \widehat{V}^{-1} (\widehat{\theta} - \theta_0).$$
+
+\vspace{0.5cm}
+
+\noindent The goal of this section is to verify that $W \overset{d}{\to} \chi^2_d$ if $H_0$ is true. 
+
+\begin{enumerate}
+
+\item[8.] Now let's derive the relationship between the normal distribution and the $\chi^2$ distribution. 
+
+\begin{enumerate}
+\item Let $Z \sim N(0, 1)$ be a standard normal variable. Show that $Z^2 \sim \chi^2_1$ (a $\chi^2$ distribution with 1 degree of freedom), by proving that the pdf of $Y = Z^2$ is 
+$$f_{Y}(y) = \frac{1}{\sqrt{2 \pi}} \frac{1}{\sqrt{y}} e^{-y/2}.$$
+
+\item Suppose that $Z_1, Z_2,...,Z_q \overset{iid}{\sim} N(0, 1)$. Show that $\sum \limits_{i=1}^q Z_i^2 \sim \chi^2_q$ (a $\chi^2$ distribution with $q$ degrees of freedom). You may use the mgf of a $\chi^2$ distribution without proof.
+
+\item Let $\theta \in \mathbb{R}$ be a parameter of interest, and $\widehat{\theta}_n$ the maximum likelihood from a sample of size $n$. Let 
+$$Z_n = \sqrt{n \mathcal{I}_1(\theta)}(\widehat{\theta}_n - \theta).$$
+Asymptotic normality of the MLE tells us that $Z_n \overset{d}{\to} N(0, 1)$. Show that $Z_n^2 \overset{d}{\to} \chi^2_1$.
+\end{enumerate}
+
+
+\item[9.] Finally, let's connect the multivariate normal with the $\chi^2$.
+
+\begin{enumerate}
+
+
+\item Show that if $X \sim N(\mu, \Sigma)$, then $(X - \mu)^T \Sigma^{-1} (X - \mu) \sim \chi^2_q$.
+
+\item Suppose that $\widehat{\theta}$ is some estimator of $\theta \in \mathbb{R}^d$, and $\sqrt{n}(\widehat{\theta} - \theta) \overset{d}{\to} N(0, V)$. Let $\widehat{V}$ be an estimator of $V$ such that $\widehat{V} \overset{p}{\to} V$, and let $W = n(\widehat{\theta} - \theta_0)^T \widehat{V}^{-1} (\widehat{\theta} - \theta_0)$. Prove that $W \overset{d}{\to} \chi^2_d$ if the null hypothesis $H_0: \theta = \theta_0$ is true.
+\end{enumerate}
+
+\end{enumerate}
+
+\section*{Logistic regression with earthquake data}
+
+In the second part of this exam, you will work with a dataset from DrivenData, an online data competition site that hosts competitions aimed at improving education, health, safety, and general well being for individuals around the world.\\
+
+\noindent Our data come from the 2015 Gorkha earthquake in Nepal. After the earthquake, a large scale survey was conducted to determine the amount of damage the earthquake caused for homes, businesses and other structures. This is one of the largest post-disaster surveys in the world, and researchers are interested in which building characteristics are associated with earthquake damage.\\
+
+\noindent You will work with a subset of the earthquake data, consisting of 211774 buildings, containing the following variables:
+\begin{itemize}
+\item \verb;Damage;: whether the building sustained any damage (1) or not (0)
+
+\item \verb;Age;: the age of the building (in years)
+
+\item \verb;Surface;: a categorical variable recording the surface condition of the land around the building. There are three different levels: \verb;n;, \verb;o;, and \verb;t;. (The researchers who collected the data anonymized the level names to protect inhabitants' privacy).
+\end{itemize}
+
+\noindent You can load the data into R by
+\begin{verbatim}
+earthquake <- read.csv("https://sta711-s24.github.io/homework/earthquake_small.csv")
+\end{verbatim}
+
+\noindent You will work with the following logistic regression model (you may assume all assumptions are met; no transformations or diagnostics are needed):
+$$Damage_i \sim Bernoulli(p_i)$$
+$$\log \left( \dfrac{p_i}{1 - p_i} \right) = \beta_0 + \beta_1 Age_i + \beta_2 SurfaceO_i + \beta_3 SurfaceT_i + \beta_4 Age_i \cdot SurfaceO_i + \beta_5 Age_i \cdot SurfaceT_i$$
+
+where $SurfaceO$ and $SurfaceT$ are indicator variables for whether surface is o or t, respectively.\\
+
+\begin{enumerate}
+\item[10.] 
+\begin{enumerate}
+\item Fit the logistic regression model in R, and interpret the estimated slope $\widehat{\beta}_1$ in terms of the \textit{odds} of damage.
+
+\item Calculate the estimated probability of damage for a 50 year old building with surface condition = t.
+\end{enumerate}
+
+\item[11.] The researchers want to know whether the relationship between Age and the probability of damage is the same for buildings in all three surface conditions. Use a hypothesis test to address the researchers' question; you should state the hypotheses in terms of one or more model parameters, calculate a test statistic and p-value, and make a conclusion.
+
+\end{enumerate}
+
+\end{document}
