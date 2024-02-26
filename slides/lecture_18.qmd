@@ -1,0 +1,54 @@
+---
+title: "Lecture 18: Wald Tests"
+format: 
+  revealjs:
+    theme: theme.scss
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+
+## Hypothesis test for a population proportion
+
+Let $Y_1, Y_2,...\overset{iid}{\sim} Bernoulli(p)$. We want to test
+
+$H_0: p = p_0 \hspace{1cm} H_A: p \neq p_0$
+
+## Wald test for one parameter
+
+## Testing multiple parameters
+
+Logistic regression model for the dengue data:
+
+$$Y_i \sim Bernoulli(p_i)$$
+
+$$\log \left( \dfrac{p_i}{1 - p_i} \right) = \beta_0 + \beta_1 WBC_i + \beta_2 PLT_i$$
+
+Researchers want to know if there is any relationship between white blood cell count or platelet count, and the probability a patient has dengue. What hypotheses should they test?
+
+## Testing multiple parameters
+
+```{r include=F}
+library(knitr)
+
+
+dengue <- read.csv("https://sta712-f22.github.io/homework/dengue.csv")
+```
+
+```{r}
+m1 <- glm(Dengue ~ WBC + PLT, data = dengue, 
+          family = binomial)
+summary(m1)$coefficients
+```
+
+Can the researchers test their hypotheses using this output?
+
+## Wald tests for multiple parameters
+
+
+## Class activity
+
+[https://sta711-s24.github.io/class_activities/ca_lecture_18.html](https://sta711-s24.github.io/class_activities/ca_lecture_18.html)
+
+
