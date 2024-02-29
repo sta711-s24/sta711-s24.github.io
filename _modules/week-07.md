@@ -12,3 +12,4 @@ February 28
 
 March 1
 : Hypothesis testing framework
+  : [Slides](https://sta711-s24.github.io/slides/lecture_20.pdf), [Class activity](https://sta711-s24.github.io/class_activities/ca_lecture_20.html)

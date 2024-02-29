@@ -1,0 +1,62 @@
+---
+title: "Lecture 20: Hypothesis testing framework"
+format: 
+  revealjs:
+    theme: theme.scss
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+
+## General framework for hypothesis tests
+
+**Definition:** Let $\theta \in \mathbb{R}^p$ be some parameter of interest. A **hypothesis** is a statement about $\theta$. The goal of a hypothesis test is to compare two competing hypotheses:
+
+$$H_0: \theta \in \Theta_0 \hspace{1cm} H_A: \theta \in \Theta_1$$
+
+
+## Outcomes
+
+$$H_0: \theta \in \Theta_0 \hspace{1cm} H_A: \theta \in \Theta_1$$
+
+The outcome of the test is a decision to either **reject** $H_0$ or **fail to reject** $H_0$.
+
+## Constructing a test
+
+$$H_0: \theta \in \Theta_0 \hspace{1cm} H_A: \theta \in \Theta_1$$
+
+## Power function
+
+Suppose we reject $H_0$ when $(X_1,...,X_n) \in R$. The **power function** $\beta(\theta)$ is
+$$\beta(\theta) = P_{\theta}((X_1,...,X_n) \in R)$$
+
+
+## Example
+
+$X_1,...,X_n$ iid from a population with mean $\mu$ and variance $\sigma^2$. 
+
+$$H_0: \mu = \mu_0 \hspace{1cm} H_A: \mu \neq \mu_0$$
+
+## Rejecting $H_0$
+
+$$H_0: \theta \in \Theta_0 \hspace{1cm} H_A: \theta \in \Theta_1$$
+
+**Question:** A hypothesis test rejects $H_0$ if $(X_1,...,X_n)$ is in the rejection region $R$. Are there any issues if we only use a rejection region to test hypotheses?
+
+
+## p-values
+
+$$H_0: \theta \in \Theta_0 \hspace{1cm} H_A: \theta \in \Theta_1$$
+
+Given $\alpha$, we construct a rejection region $R$ and reject $H_0$ when $(X_1,...,X_n) \in R$. Let $(x_1,...,x_n)$ be an observed set of data. 
+
+**Definition:** The **p-value** for the observed data $(x_1,...,x_n)$ is the smallest $\alpha$ for which we reject $H_0$.
+
+
+## Example
+
+$X_1,...,X_n$ iid from a population with mean $\mu$ and variance $\sigma^2$. 
+
+$$H_0: \mu = \mu_0 \hspace{1cm} H_A: \mu \neq \mu_0$$
+
