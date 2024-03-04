@@ -8,7 +8,7 @@ February 26
   
 February 28
 : Wald testing class activity
-  : [Class activity](https://sta711-s24.github.io/class_activities/ca_lecture_19.html)
+  : [Class activity](https://sta711-s24.github.io/class_activities/ca_lecture_19.html), [Class activity solutions](https://sta711-s24.github.io/class_activities/ca_lecture_19_solutions.html)
 
 March 1
 : No class
