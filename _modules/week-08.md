@@ -8,6 +8,7 @@ March 4
   
 March 6
 : t tests
+  : [Slides](https://sta711-s24.github.io/slides/lecture_21.pdf), [Class activity](https://sta711-s24.github.io/class_activities/ca_lecture_21.html)
 
 March 8
 : t tests

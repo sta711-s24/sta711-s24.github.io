@@ -1,0 +1,155 @@
+---
+title: "Lecture 21: More hypothesis testing"
+format: 
+  revealjs:
+    theme: theme.scss
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+
+## Rejecting $H_0$
+
+$$H_0: \theta \in \Theta_0 \hspace{1cm} H_A: \theta \in \Theta_1$$
+
+**Question:** A hypothesis test rejects $H_0$ if $(X_1,...,X_n)$ is in the rejection region $R$. Are there any issues if we only use a rejection region to test hypotheses?
+
+
+## p-values
+
+$$H_0: \theta \in \Theta_0 \hspace{1cm} H_A: \theta \in \Theta_1$$
+
+Given $\alpha$, we construct a rejection region $R$ and reject $H_0$ when $(X_1,...,X_n) \in R$. Let $(x_1,...,x_n)$ be an observed set of data. 
+
+**Definition:** The **p-value** for the observed data $(x_1,...,x_n)$ is the smallest $\alpha$ for which we reject $H_0$.
+
+
+## Example
+
+$X_1,...,X_n$ iid from a population with mean $\mu$ and variance $\sigma^2$. 
+
+$$H_0: \mu = \mu_0 \hspace{1cm} H_A: \mu \neq \mu_0$$
+
+## Issue: Wald tests with small $n$
+
+The Wald test for a population mean $\mu$ relies on
+$$Z_n = \frac{\sqrt{n}(\overline{X}_n - \mu)}{s} \approx N(0,1)$$
+
+* $Z_n \overset{d}{\to} N(0,1)$ as $n \to \infty$
+* But for small $n$, $Z_n$ is not normal, even if $X_1,...,X_n \overset{iid}{\sim} N(\mu, \sigma^2)$
+
+What is the exact distribution of $\frac{\sqrt{n}(\overline{X}_n - \mu)}{s}$?
+
+## $t$-tests
+
+If $X_1,...,X_n \overset{iid}{\sim} N(\mu, \sigma^2)$, then
+$$\frac{\sqrt{n}(\overline{X}_n - \mu)}{s} \sim t_{n-1}$$
+
+## Class activity
+
+[https://sta711-s24.github.io/class_activities/ca_lecture_21.html](https://sta711-s24.github.io/class_activities/ca_lecture_21.html)
+
+## Class activity
+
+Type I error rate with Normal distribution:
+
+```{r, echo=F, message=F, fig.align='center', fig.width=10, fig.height=4}
+library(tidyverse)
+library(gridExtra)
+set.seed(3)
+ns <- c(5, 10, 25, 50, 100)
+mu0 <- 0
+sigma <- 1
+alpha <- 0.05
+nreps <- 5000
+error_known <- rep(0, length(ns))
+error_unknown <- rep(0, length(ns))
+for(j in 1:length(ns)){
+  n <- ns[j]
+  test_stats <- rep(0, nreps)
+  test_stats_est <- rep(0, nreps)
+  for(i in 1:nreps){
+    x <- rnorm(n, mu0, sigma)
+    test_stats[i] <- (mean(x) - mu0)/(sigma/sqrt(n))
+    test_stats_est[i] <- (mean(x) - mu0)/(sd(x)/sqrt(n))
+  }
+  error_known[j] <- mean(test_stats > qnorm(0.05, lower.tail=F))
+  error_unknown[j] <- mean(test_stats_est > qnorm(0.05, lower.tail=F))
+}
+
+p1 <- data.frame(n = ns, error = error_known) %>%
+  ggplot(aes(x = n, y = error)) +
+  geom_point(size = 2) +
+  geom_hline(yintercept = 0.05) +
+  theme_bw() +
+  labs(y = "Type I error", title = "Population sd known") +
+  theme(text = element_text(size = 20)) +
+  scale_y_continuous(limits = c(0, 0.1))
+
+p2 <- data.frame(n = ns, error = error_unknown) %>%
+  ggplot(aes(x = n, y = error)) +
+  geom_point(size = 2) +
+  geom_hline(yintercept = 0.05) +
+  theme_bw() +
+  labs(y = "Type I error", title = "Population sd estimated") +
+  theme(text = element_text(size = 20)) +
+  scale_y_continuous(limits = c(0, 0.1))
+
+grid.arrange(p1, p2, ncol=2)
+```
+
+## Class activity
+
+Wald test vs. $t$-test:
+
+```{r, echo=F, message=F, fig.align='center', fig.width=10, fig.height=4}
+set.seed(3)
+ns <- c(5, 10, 25, 50, 100)
+mu0 <- 0
+sigma <- 1
+alpha <- 0.05
+nreps <- 5000
+error_z <- rep(0, length(ns))
+error_t <- rep(0, length(ns))
+for(j in 1:length(ns)){
+  n <- ns[j]
+  test_stats <- rep(0, nreps)
+  for(i in 1:nreps){
+    x <- rnorm(n, mu0, sigma)
+    test_stats[i] <- (mean(x) - mu0)/(sd(x)/sqrt(n))
+  }
+  error_z[j] <- mean(test_stats > qnorm(0.05, lower.tail=F))
+  error_t[j] <- mean(test_stats > qt(0.05, df=n-1, lower.tail=F))
+}
+
+p1 <- data.frame(n = ns, error = error_z) %>%
+  ggplot(aes(x = n, y = error)) +
+  geom_point(size = 2) +
+  geom_hline(yintercept = 0.05) +
+  theme_bw() +
+  labs(y = "Type I error", title = "Wald test") +
+  theme(text = element_text(size = 20)) +
+  scale_y_continuous(limits = c(0, 0.1))
+
+p2 <- data.frame(n = ns, error = error_t) %>%
+  ggplot(aes(x = n, y = error)) +
+  geom_point(size = 2) +
+  geom_hline(yintercept = 0.05) +
+  theme_bw() +
+  labs(y = "Type I error", title = "t test") +
+  theme(text = element_text(size = 20)) +
+  scale_y_continuous(limits = c(0, 0.1))
+
+grid.arrange(p1, p2, ncol=2)
+```
+
+## Philosophical question
+
+* **Position 1:** We should always use a Wald test to test hypotheses about a population mean
+* **Position 2:** We should always use a $t$-test to test hypotheses about a population mean
+
+With which position do you agree?
+
+
+
