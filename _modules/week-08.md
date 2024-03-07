@@ -12,3 +12,7 @@ March 6
 
 March 8
 : t tests
+  : [Slides](https://sta711-s24.github.io/slides/lecture_22.pdf)
+
+: **Homework 6 released**{: .label .label-yellow }
+  : [HW 5](https://sta711-s24.github.io/homework/HW6.pdf)
