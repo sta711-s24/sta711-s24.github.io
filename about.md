@@ -153,7 +153,7 @@ your homework.
 
 ### Exams
 
-There will be three take-home exams during the semester. The purpose of these exams is to demonstrate your mastery of core course material. Further instructions will be provided on each exam.
+There will be two take-home exams during the semester. The purpose of these exams is to demonstrate your mastery of core course material. Further instructions will be provided on each exam.
 
 Like homework assignments, each exam question will be graded on a Mastered / Not yet mastered scale. For each exam, there will be an optional take-home make-up exam (with different questions). If you do not master all questions on the exam, you may try again on the make-up exam. If you do not master all questions after taking the make-up exam, you may try again on the final exam.
 
@@ -182,37 +182,35 @@ Your final grade in the course simply reflects your work in the course and how m
 To get a **C** in the course:
 
 * Receive credit for at least *N-3* homework assignments
-* Master at least 80% of the questions on one exam
 
 To get a **C+** in the course:
 
 * Receive credit for at least *N-2* homework assignments
-* Master at least 80% of the questions on one exam
 
 To get a **B-** in the course:
 
 * Receive credit for at least *N-3* homework assignments
-* Master at least 80% of the questions on two exams
+* Master at least 80% of the questions on one exam
 
 To get a **B** in the course:
 
 * Receive credit for at least *N-2* homework assignments
-* Master at least 80% of the questions on two exams
+* Master at least 80% of the questions on one exam
 
 To get a **B+** in the course:
 
 * Receive credit for at least *N-1* homework assignments
-* Master at least 80% of the questions on two exams
+* Master at least 80% of the questions on one exam
 
 To get an **A-** in the course:
 
 * Receive credit for at least *N-2* homework assignments
-* Master at least 80% of the questions on all three exams
+* Master at least 80% of the questions on two exams
 
 To get an **A** in the course:
 
 * Receive credit for at least *N-1* homework assignments
-* Master at least 80% of the questions on all three exams
+* Master at least 80% of the questions on two exams
 
 Each grade bundle is an indivisible unit; all assignments in a bundle must meet expectations in order to
 earn the associated grade. 
