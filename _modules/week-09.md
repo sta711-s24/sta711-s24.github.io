@@ -16,5 +16,9 @@ March 20
 
 March 22
 : Likelihood ratio tests
+  : [Slides](https://sta711-s24.github.io/slides/lecture_25.pdf)
 
 : Casella and Berger 10.3.1
+
+: **Homework 7 released**{: .label .label-yellow }
+  : [HW 7](https://sta711-s24.github.io/homework/HW7.pdf)

@@ -1,0 +1,26 @@
+---
+title: "Lecture 25: Likelihood ratio tests"
+format: 
+  revealjs:
+    theme: theme.scss
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## Another question
+
+Let $X_1,...,X_n \overset{iid}{\sim} Poisson(\lambda)$. We wish to test $H_0: \lambda = \lambda_0$ vs. $H_A: \lambda \neq \lambda_0$.
+
+## Likelihood ratio tests
+
+## Back to the Poisson example
+
+Let $X_1,...,X_n \overset{iid}{\sim} Poisson(\lambda)$. We wish to test $H_0: \lambda = \lambda_0$ vs. $H_A: \lambda \neq \lambda_0$.
+
+## Linear regression with normal data
+
+Suppose we observe $(X_1, Y_1),...,(X_n, Y_n)$, where $Y_i = \beta^T X_i + \varepsilon_i$ and $\varepsilon_i \overset{iid}{\sim} N(0, \sigma^2)$. Partition $\beta = (\beta_{(1)}, \beta_{(2)})^T$. We wish to test $H_0: \beta_{(2)} = 0$ vs. $H_A: \beta_{(2)} \neq 0$.
+
+## Asymptotics of the LRT
+
