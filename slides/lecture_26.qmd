@@ -1,0 +1,99 @@
+---
+title: "Lecture 26: Likelihood ratio tests"
+format: 
+  revealjs:
+    theme: theme.scss
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r include=F}
+library(knitr)
+library(tidyverse)
+library(MASS)
+library(foreign)
+library(statmod)
+library(gridExtra)
+
+earthquake <- read.csv("https://sta711-s23.github.io/homework/earthquake_small.csv")
+
+```
+
+## Asymptotics of the LRT
+
+## Generalization to higher dimensions
+
+
+## Earthquake data
+
+Data from the 2015 Gorkha earthquake on 211774 buildings, with variables including:
+
+* `Damage`: whether the building sustained any damage (1) or not (0)
+* Age: the age of the building (in years)
+* `Surface`: a categorical variable recording the surface condition of the land around the building. There are three different levels: n, o, and t
+
+
+## Likelihood ratio tests
+
+```{r, echo=T}
+m1 <- glm(Damage ~ Age*Surface, data = earthquake,
+          family = binomial)
+summary(m1)$coefficients
+```
+
+We want to test whether the relationship between Age and Damage is the same for all three surface conditions. What hypotheses do we test?
+
+
+## Likelihood ratio tests
+
+**Full model:**
+
+```{r, eval=F, echo=T}
+m1 <- glm(Damage ~ Age*Surface, data = earthquake,
+          family = binomial)
+```
+
+**Reduced model:**
+
+```{r, eval=F, echo=T}
+m2 <- glm(Damage ~ Age + Surface, data = earthquake,
+          family = binomial)
+```
+
+
+## Comparing deviances
+
+```{r, echo=T}
+m1 <- glm(Damage ~ Age*Surface, data = earthquake,
+          family = binomial)
+m1$deviance
+
+m2 <- glm(Damage ~ Age + Surface, data = earthquake,
+          family = binomial)
+m2$deviance
+```
+
+## Comparing deviances
+
+```{r, echo=T}
+m1 <- glm(Damage ~ Age*Surface, data = earthquake,
+          family = binomial)
+
+m2 <- glm(Damage ~ Age + Surface, data = earthquake,
+          family = binomial)
+
+pchisq(m2$deviance - m1$deviance,
+       m2$df.residual - m1$df.residual,
+       lower.tail = F)
+```
+
+## Deviance
+
+**Definition:** The *deviance* of a fitted model with parameter estimates $\widehat{\beta}$ is given by
+$$2 \ell(\text{saturated model}) - 2 \ell(\widehat{\beta})$$
+
+
+## Summary: LRT for logistic regression
+
+
