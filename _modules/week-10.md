@@ -9,9 +9,11 @@ March 25
 : Casella and Berger 10.3.1
   
 March 27
-: Wald vs. LRT
+: Understanding deviance
+
+  : [Class activity](https://sta711-s24.github.io/class_activities/ca_lecture_27.html), [Class activity solutions](https://sta711-s24.github.io/class_activities/ca_lecture_27_solutions.html)
 
 March 29
-: Multiple testing issues
+: Wald vs. LRT
 
 : **Homework 8 released**{: .label .label-yellow }
