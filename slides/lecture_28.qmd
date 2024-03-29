@@ -1,0 +1,11 @@
+---
+title: "Lecture 28: Wald vs. LRT"
+format: 
+  revealjs:
+    theme: theme.scss
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+## Equivalence of the Wald and LRT statistics
