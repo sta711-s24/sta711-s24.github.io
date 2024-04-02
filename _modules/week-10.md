@@ -15,4 +15,4 @@ March 27
 
 March 29
 : Wald vs. LRT
-  : [Slides](https://sta711-s24.github.io/slides/lecture_28.pdf), [Class activity](https://sta711-s24.github.io/class_activities/ca_lecture_28.html)
+  : [Slides](https://sta711-s24.github.io/slides/lecture_28.pdf), [Class activity](https://sta711-s24.github.io/class_activities/ca_lecture_28.html), [Class activity solutions](https://sta711-s24.github.io/class_activities/ca_lecture_28_solutions.html)
