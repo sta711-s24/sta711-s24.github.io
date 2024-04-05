@@ -11,5 +11,5 @@ April 3
   : [Slides](https://sta711-s24.github.io/slides/lecture_30.pdf)
 
 April 5
-: Assumptions and diagnostics
+: False discovery rate
   : [Slides](https://sta711-s24.github.io/slides/lecture_31.pdf), [Class activity](https://sta711-s24.github.io/class_activities/ca_lecture_31.html)
