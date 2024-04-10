@@ -8,6 +8,7 @@ April 8
   
 April 10
 : Assumptions and diagnostics
+  : [Slides](https://sta711-s24.github.io/slides/lecture_33.pdf), [Class activity](https://sta711-s24.github.io/class_activities/ca_lecture_33.html)
 
 April 12
 : Assumptions and diagnostics

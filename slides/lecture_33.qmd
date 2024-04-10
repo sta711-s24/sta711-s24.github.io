@@ -1,0 +1,14 @@
+---
+title: "Lecture 33: Assumptions and diagnostics"
+format: 
+  revealjs:
+    theme: theme.scss
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+
+## Quantile residuals
+
+## Leverage and Cook's distance
