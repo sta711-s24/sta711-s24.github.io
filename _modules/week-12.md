@@ -12,3 +12,4 @@ April 10
 
 April 12
 : Assumptions and diagnostics
+  : [Slides](https://sta711-s24.github.io/slides/lecture_34.pdf)
