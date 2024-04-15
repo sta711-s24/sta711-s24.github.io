@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+\usepackage{url}
+\usepackage{alltt}
+\usepackage{bm}
+\usepackage{bbm}
+\linespread{1}
+\textwidth 6.5in
+\oddsidemargin 0.in
+\addtolength{\topmargin}{-1in}
+\addtolength{\textheight}{2in}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+
+\begin{center}
+\Large
+STA 711 Homework 8\\
+\normalsize
+\vspace{5mm}
+\end{center}
+
+\noindent \textbf{Due:} Tuesday, April 23, 11am on Canvas.\\ 
+
+\noindent \textbf{Instructions:} Submit your work as a single PDF. For this assignment, you may include written work by scanning it and incorporating it into the PDF. Include all R code needed to reproduce your results in your submission.
+
+\section*{Confidence intervals}
+
+
+\begin{enumerate}
+\item In class, we have worked with Wald confidence intervals for a binomial proportion. Now let's try inverting the test. Suppose we have data $X_1,...,X_n \overset{iid}{\sim} Bernoulli(p)$. Derive a $1 - \alpha$ confidence interval for $p$ by inverting the LRT of $H_0: p = p_0$ vs. $H_A: p \neq p_0$. (It may be difficult to completely simplify the interval).
+
+\item Suppose $X_1,...,X_n \overset{iid}{\sim} N(\theta, \theta)$, where $\theta > 0$. Find a pivotal quantity $Q(X_1,...,X_n, \theta)$, and use the quantity to create a $1 - \alpha$ confidence interval for $\theta$.
+
+\item Suppose $X_1,...,X_n \overset{iid}{\sim} Uniform[\theta - \frac{1}{2}, \theta + \frac{1}{2}]$. Find a $1 - \alpha$ confidence interval for $\theta$.
+
+\item Suppose that $X_1,...,X_n \overset{iid}{\sim} N(\mu, \sigma^2)$. 
+
+\begin{enumerate}
+\item If $\sigma^2$ is known, the interval for $\mu$ is $\overline{X} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$, and the \textit{width} of the interval is $2z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$. Find the minimum value of $n$ so that a 95\% confidence interval for $\mu$ will have a length of at most $\sigma/4$.
+
+\item If $\sigma^2$ is unknown, the interval for $\mu$ is $\overline{X} \pm t_{n-1, \alpha/2} \frac{s}{\sqrt{n}}$, where $s^2 = \frac{1}{n-1} \sum \limits_{i=1}^n (X_i - \overline{X})^2$. Find the minimum value of $n$ such that, with probability 0.9, a 95\% confidence interval for $\mu$ will have a length of at most $\sigma/4$.
+\end{enumerate}
+
+\end{enumerate}
+
+\section*{Delta method}
+
+
+\noindent Let $\theta \in \mathbb{R}^d$ be a parameter of interest, and $\widehat{\theta}$ be an estimate (e.g., the MLE). Our Wald tests and intervals depend on convergence in distribution to a normal:
+$$\sqrt{n}(\widehat{\theta} - \theta) \overset{d}{\to} N(0, \Sigma).$$
+We also know that if $\bm{a} \in \mathbb{R}^d$, then $\bm{a}^T \widehat{\theta} \approx N(\bm{a}^T \theta, \frac{1}{n} \bm{a}^T \Sigma \bm{a})$.\\
+
+\noindent But what if we are interested in a \textit{nonlinear} function $g(\theta)$, for some $g: \mathbb{R}^d \to \mathbb{R}$? It turns out that, under certain conditions, $g(\widehat{\theta})$ is actually (approximately) normal too! Formally, if $g$ is a continuously differentiable function, then
+$$\sqrt{n}(g(\widehat{\theta}) - g(\theta)) \overset{d}{\to} N\left(0, \left( \frac{\partial g}{\partial \theta} \right)^T \Sigma \left( \frac{\partial g}{\partial \theta} \right) \right),$$
+where $\frac{\partial g}{\partial \theta}$ is the gradient of $g$ evaluated at $\theta$. This is called the \textit{(multivariate) delta method}.\\
+
+\noindent The purpose of this problem is to derive the delta method in the univariate case (the same intuition applies to the multivariate case). In the univariate case, $d = 1$ and $\theta \in \mathbb{R}$.
+
+\begin{enumerate}
+\item[5.] The univariate delta method is the following: if $\sqrt{n}(\widehat{\theta} - \theta) \overset{d}{\to} N(0, \sigma^2)$, and $g$ is a continuously differentiable function with $g'(\theta) \neq 0$, then
+$$\sqrt{n}(g(\widehat{\theta}) - g(\theta)) \overset{d}{\to} N(0, \sigma^2 [g'(\theta)]^2).$$
+
+\begin{enumerate}
+\item Using a first-order Taylor expansion, show that
+$$\sqrt{n}(g(\widehat{\theta}) - g(\theta)) \approx \sqrt{n}g'(\theta)(\widehat{\theta} - \theta)$$
+
+\item Using Slutsky's theorem, argue that $\sqrt{n} g'(\theta)(\widehat{\theta} - \theta) \overset{d}{\to} N(0, \sigma^2 [g'(\theta)]^2)$.
+
+\item Using Slutsky's theorem and the continuous mapping theorem, argue that $$\sqrt{n}(\widehat{\theta} - \theta) h(\widehat{\theta}) \overset{p}{\to} 0.$$
+
+\item Using Slutsky's theorem, conclude that $\sqrt{n}(g(\widehat{\theta}) - g(\theta)) \overset{d}{\to} N(0, \sigma^2 [g'(\theta)]^2)$.
+\end{enumerate}
+
+\item[6.] Suppose that $X_1,...,X_n \overset{iid}{\sim} Poisson(\lambda)$. A $1 - \alpha$ Wald interval for $\lambda$ is $\widehat{\lambda} \pm z_{\alpha/2} \sqrt{\frac{\widehat{\lambda}}{n}}$, where $\widehat{\lambda} = \overline{X}$. Clearly, the variance of $\widehat{\lambda}$ depends on $\lambda$. 
+
+\begin{enumerate}
+\item Using the univariate delta method, find a transformation $g$ such that the variance of $g(\widehat{\lambda})$ does not depend on $\lambda$ (this is called a \textit{variance stabilizing transformation}).
+
+\item Use (a) to find a $1 - \alpha$ confidence interval for $\lambda$.
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
