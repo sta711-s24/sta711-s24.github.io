@@ -11,6 +11,7 @@ April 15
   
 April 17
 : Pivots
+  : [Slides](https://sta711-s24.github.io/slides/lecture_36.pdf)
 
 April 19
 : Method of moments
