@@ -15,3 +15,4 @@ April 17
 
 April 19
 : Method of moments
+  : [Slides](https://sta711-s24.github.io/slides/lecture_37.pdf)
