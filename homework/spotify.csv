@@ -1,0 +1,139 @@
+artist,track,album,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,duration_s
+Manchester Orchestra,The Maze,A Black Mile To The Surface,0.266,0.426,F#,-9.114,major,0.0364,0.0911,0.16,0.181,0.236,101.249,178.307
+Manchester Orchestra,The Gold,A Black Mile To The Surface,0.394,0.689,F#,-6.648,major,0.0385,0.00119,0.0131,0.176,0.457,180.111,273.067
+Manchester Orchestra,The Moth,A Black Mile To The Surface,0.505,0.879,A#,-6.078,major,0.0354,0.00011,0.49,0.579,0.338,112.021,275.973
+Manchester Orchestra,"Lead, SD",A Black Mile To The Surface,0.42,0.582,F,-7.53,major,0.0383,0.00112,0.117,0.0866,0.248,127.272,293.92
+Manchester Orchestra,The Alien,A Black Mile To The Surface,0.464,0.334,D#,-12.916,major,0.0313,0.307,0.247,0.11,0.326,165.278,328.933
+Manchester Orchestra,The Sunshine,A Black Mile To The Surface,0.512,0.614,D#,-14.368,major,0.0292,0.104,0.738,0.252,0.965,168.071,117.173
+Manchester Orchestra,The Grocery,A Black Mile To The Surface,0.538,0.67,D#,-8.548,major,0.0374,0.00391,0.0691,0.116,0.33,120.053,312.413
+Manchester Orchestra,The Wolf,A Black Mile To The Surface,0.431,0.806,A#,-6.852,minor,0.0384,0.00318,0.45,0.124,0.171,127.854,266.76
+Manchester Orchestra,The Mistake,A Black Mile To The Surface,0.361,0.454,A,-8.494,major,0.0305,0.0931,0.00146,0.0737,0.298,124.899,234.933
+Manchester Orchestra,The Parts,A Black Mile To The Surface,0.368,0.0212,D,-20.06,major,0.046,0.918,0.000509,0.111,0.197,144.828,252.947
+Manchester Orchestra,The Silence,A Black Mile To The Surface,0.449,0.357,A#,-8.48,major,0.0266,0.0605,0.483,0.105,0.178,66.979,419.093
+Manchester Orchestra,Top Notch,HOPE,0.606,0.204,G#,-13.504,major,0.031,0.788,0.000523,0.11,0.204,113.935,237.347
+Manchester Orchestra,Choose You,HOPE,0.502,0.18,D#,-15.785,major,0.0343,0.862,0.00776,0.111,0.124,123.338,247.947
+Manchester Orchestra,Girl Harbor,HOPE,0.514,0.226,A#,-13.603,major,0.0314,0.911,0.000432,0.128,0.257,144.301,235.707
+Manchester Orchestra,The Mansion,HOPE,0.474,0.144,A#,-13.932,major,0.029,0.915,0.7,0.104,0.0489,72.741,202.56
+Manchester Orchestra,The Ocean,HOPE,0.163,0.172,C,-13.433,major,0.0322,0.962,0.288,0.149,0.0951,204.629,262.373
+Manchester Orchestra,Every Stone,HOPE,0.322,0.0665,F,-18.902,major,0.038,0.869,0.685,0.0926,0.052,140.076,280.413
+Manchester Orchestra,All That I Really Wanted,HOPE,0.476,0.141,F#,-13.908,major,0.0308,0.764,6.11e-05,0.137,0.198,129.108,217.4
+Manchester Orchestra,Trees,HOPE,0.162,0.0877,D,-17.374,minor,0.0381,0.801,0.46,0.101,0.106,82.443,191.427
+Manchester Orchestra,Indentions,HOPE,0.569,0.203,A,-16.993,major,0.0345,0.884,0.318,0.125,0.198,109.973,236.32
+Manchester Orchestra,See It Again,HOPE,0.311,0.14,C,-16.003,major,0.0316,0.963,0,0.136,0.187,138.538,176.627
+Manchester Orchestra,Cope,HOPE,0.279,0.0611,G#,-15.694,major,0.0373,0.943,0.00117,0.111,0.0996,71.666,185.16
+Manchester Orchestra,Top Notch,Cope (Deluxe Version),0.52,0.63,D#,-5.924,major,0.0458,0.208,2.64e-05,0.237,0.571,130.111,202.067
+Manchester Orchestra,Choose You,Cope (Deluxe Version),0.225,0.796,D#,-5.032,major,0.0622,0.0261,0.00165,0.0784,0.434,157.79,194.907
+Manchester Orchestra,Girl Harbor,Cope (Deluxe Version),0.478,0.684,C,-5.942,major,0.0437,0.0975,0.218,0.0698,0.653,157.102,202.613
+Manchester Orchestra,The Mansion,Cope (Deluxe Version),0.57,0.483,F,-6.324,major,0.0297,0.0372,0.097,0.0816,0.313,72.799,200.853
+Manchester Orchestra,The Ocean,Cope (Deluxe Version),0.556,0.685,C,-5.45,major,0.0865,0.308,0.000677,0.101,0.609,140.11,199.907
+Manchester Orchestra,Every Stone,Cope (Deluxe Version),0.488,0.759,F,-6.532,major,0.0401,0.135,0.2,0.166,0.625,176.12,219.04
+Manchester Orchestra,All That I Really Wanted,Cope (Deluxe Version),0.31,0.681,G#,-5.448,major,0.0587,0.0767,0.000216,0.168,0.709,162.684,182.52
+Manchester Orchestra,Trees,Cope (Deluxe Version),0.319,0.737,E,-5.609,minor,0.0465,0.00781,0.00462,0.24,0.493,174.071,189.307
+Manchester Orchestra,Indentions,Cope (Deluxe Version),0.741,0.494,A#,-7.541,major,0.0384,0.198,0.263,0.0933,0.324,123.059,229.067
+Manchester Orchestra,See It Again,Cope (Deluxe Version),0.316,0.567,G#,-5.769,major,0.0464,0.0989,0.00654,0.3,0.393,156.338,242.4
+Manchester Orchestra,Cope,Cope (Deluxe Version),0.49,0.395,F,-7.881,minor,0.0308,0.0908,0.165,0.206,0.194,138.05,228.2
+Manchester Orchestra,Never Really Been Another Way Out,Cope (Deluxe Version),0.211,0.731,G#,-4.517,major,0.0653,0.0124,0.025,0.182,0.334,164.564,185.347
+Manchester Orchestra,After The Scripture,Cope (Deluxe Version),0.453,0.0972,C,-11.027,minor,0.0812,0.817,3.68e-06,0.111,0.196,172.024,275.56
+Manchester Orchestra,Deer,Simple Math,0.294,0.0903,F#,-16.284,major,0.0464,0.882,1.91e-06,0.0995,0.124,173.47,197.747
+Manchester Orchestra,Mighty,Simple Math,0.532,0.724,D,-5.874,minor,0.0398,0.00039,1.58e-05,0.0999,0.258,125.106,219.747
+Manchester Orchestra,Pensacola,Simple Math,0.659,0.794,G#,-7.17,major,0.0363,0.000398,1.08e-05,0.289,0.656,132.039,215.827
+Manchester Orchestra,April Fool,Simple Math,0.278,0.855,A#,-5.845,major,0.144,0.00249,4.37e-06,0.185,0.399,167.718,261.44
+Manchester Orchestra,Pale Black Eye,Simple Math,0.405,0.489,F,-6.899,minor,0.0351,0.00285,0.00539,0.0353,0.485,135.701,257.227
+Manchester Orchestra,Virgin,Simple Math,0.528,0.529,G#,-9.383,minor,0.0399,0.0622,1.23e-06,0.12,0.209,140.105,268.213
+Manchester Orchestra,Simple Math,Simple Math,0.335,0.468,A#,-7.918,major,0.0333,0.0105,5.09e-05,0.103,0.34,133.904,304.08
+Manchester Orchestra,Leave It Alone,Simple Math,0.431,0.563,A#,-8.684,major,0.0432,0.0112,0.000475,0.109,0.162,150.074,246.427
+Manchester Orchestra,Apprehension,Simple Math,0.696,0.704,G#,-6.465,major,0.0345,0.0343,0.00086,0.11,0.424,102.066,274.24
+Manchester Orchestra,Leaky Breaks,Simple Math,0.571,0.421,F,-12.197,major,0.0248,0.466,0.199,0.0834,0.384,98.06,434.36
+Manchester Orchestra,The Only One,Mean Everything To Nothing,0.377,0.904,A#,-3.679,major,0.0478,0.00117,1.9e-06,0.142,0.351,149.131,159.187
+Manchester Orchestra,Shake It Out,Mean Everything To Nothing,0.431,0.877,G,-4.762,minor,0.0704,2e-04,0.000252,0.152,0.262,148.298,311.44
+Manchester Orchestra,I've Got Friends,Mean Everything To Nothing,0.396,0.898,D#,-5.428,major,0.0544,0.000272,0.000708,0.287,0.352,164.727,297.493
+Manchester Orchestra,Pride,Mean Everything To Nothing,0.287,0.603,F,-6.393,major,0.042,0.000769,0.000361,0.0778,0.234,127.148,347.6
+Manchester Orchestra,In My Teeth,Mean Everything To Nothing,0.549,0.739,C,-5.673,minor,0.0424,0.000144,3.53e-05,0.0832,0.577,128.397,282.16
+Manchester Orchestra,100 Dollars,Mean Everything To Nothing,0.297,0.223,C,-11.315,major,0.0468,0.901,0,0.106,0.23,173.455,102.427
+Manchester Orchestra,I Can Feel a Hot One,Mean Everything To Nothing,0.552,0.299,F,-11.372,major,0.0315,0.485,0,0.113,0.0608,124.273,259.347
+Manchester Orchestra,My Friend Marcus,Mean Everything To Nothing,0.584,0.513,D#,-7.637,major,0.0301,0.00343,0.000251,0.111,0.193,152.061,221.093
+Manchester Orchestra,Tony The Tiger,Mean Everything To Nothing,0.667,0.725,D#,-7.363,major,0.0363,0.0111,0.0255,0.166,0.786,133.982,189.24
+Manchester Orchestra,Everything To Nothing,Mean Everything To Nothing,0.478,0.63,A#,-5.269,major,0.0363,0.0102,0.00919,0.113,0.215,138.924,337.68
+Manchester Orchestra,The River,Mean Everything To Nothing,0.338,0.365,A#,-8.489,major,0.0297,0.0153,0.00144,0.124,0.207,141.58,358.52
+Manchester Orchestra,"Jimmy, He Whispers",Mean Everything To Nothing,0.454,0.228,D,-13.868,minor,0.0394,0.235,0,0.0893,0.216,132.882,249.56
+Manchester Orchestra,Wolves at Night,I'm Like a Virgin Losing a Child,0.583,0.911,A,-6.183,major,0.0498,0.00305,1.26e-06,0.383,0.655,130.024,243.213
+Manchester Orchestra,Now That You're Home,I'm Like a Virgin Losing a Child,0.43,0.791,F#,-6.19,minor,0.0352,0.0088,0.00165,0.0682,0.579,146.945,187.64
+Manchester Orchestra,The Neighborhood Is Bleeding,I'm Like a Virgin Losing a Child,0.621,0.729,F#,-6.099,major,0.0269,0.00873,0.00136,0.15,0.618,125.028,168.827
+Manchester Orchestra,I Can Feel Your Pain,I'm Like a Virgin Losing a Child,0.538,0.0841,F#,-23.903,minor,0.0575,0.85,1.2e-05,0.202,0.17,97.841,173.24
+Manchester Orchestra,Where Have You Been?,I'm Like a Virgin Losing a Child,0.696,0.413,D#,-8.14,minor,0.0244,0.214,0.0126,0.128,0.215,135.974,376.613
+Manchester Orchestra,I Can Barely Breathe,I'm Like a Virgin Losing a Child,0.448,0.616,C#,-7.028,minor,0.0307,0.00232,0.000218,0.16,0.223,115.185,298.84
+Manchester Orchestra,Sleeper 1972,I'm Like a Virgin Losing a Child,0.313,0.0303,B,-22.87,major,0.0477,0.787,0.0746,0.0844,0.227,115.645,248.293
+Manchester Orchestra,Golden Ticket,I'm Like a Virgin Losing a Child,0.444,0.442,B,-7.866,major,0.0292,0.00906,2.22e-06,0.133,0.542,164.282,212.36
+Manchester Orchestra,Alice and Interiors,I'm Like a Virgin Losing a Child,0.64,0.707,D#,-5.912,minor,0.0296,0.000964,0.000352,0.274,0.491,126.025,261.84
+Manchester Orchestra,Don't Let Them See You Cry,I'm Like a Virgin Losing a Child,0.602,0.0666,F#,-23.668,minor,0.0416,0.87,0.00472,0.124,0.393,137.619,102.893
+Manchester Orchestra,Colly Strings,I'm Like a Virgin Losing a Child,0.373,0.224,E,-9.694,major,0.0331,0.039,0,0.0904,0.0665,119.977,357.28
+The Front Bottoms,You Used to Say (Holy Fuck),Going Grey,0.624,0.736,D,-7.163,major,0.0318,0.00122,0.0204,0.121,0.325,112.009,240.827
+The Front Bottoms,Peace Sign,Going Grey,0.403,0.79,E,-5.119,major,0.031,0.00161,0,0.223,0.43,162.015,192.28
+The Front Bottoms,Bae,Going Grey,0.578,0.825,D#,-4.923,major,0.0373,0.00159,0.000256,0.189,0.631,135.064,176.267
+The Front Bottoms,Vacation Town,Going Grey,0.564,0.839,E,-4.708,major,0.0433,0.00537,6.55e-05,0.11,0.749,146.068,225.44
+The Front Bottoms,Don't Fill up on Chips,Going Grey,0.532,0.833,A,-4.688,major,0.0407,0.105,0,0.115,0.546,110.151,183.987
+The Front Bottoms,Grand Finale,Going Grey,0.587,0.828,F,-5.286,minor,0.0285,0.000396,0.0438,0.0857,0.709,123.039,199.773
+The Front Bottoms,Trampoline,Going Grey,0.621,0.835,A,-4.07,major,0.0335,0.00556,1.2e-06,0.115,0.339,111.039,217.773
+The Front Bottoms,Raining,Going Grey,0.346,0.897,C#,-5.044,major,0.0678,0.122,8.24e-05,0.358,0.661,101.744,183.253
+The Front Bottoms,Far Drive,Going Grey,0.526,0.737,G,-5.225,major,0.0402,0.00126,0.00547,0.0288,0.601,166.002,192.813
+The Front Bottoms,Everyone but You,Going Grey,0.653,0.809,C,-4.758,major,0.0307,0.00038,2.54e-06,0.239,0.635,121.982,210.053
+The Front Bottoms,Ocean,Going Grey,0.241,0.726,D,-5.928,major,0.034,0.000771,0.000438,0.191,0.269,132.193,243.013
+The Front Bottoms,Motorcycle,Back on Top,0.27,0.797,E,-5.153,major,0.0376,0.000178,4.87e-06,0.126,0.459,129.965,206.027
+The Front Bottoms,Summer Shandy,Back on Top,0.428,0.72,E,-4.37,major,0.0286,0.000172,1.66e-05,0.151,0.701,180.332,215.547
+The Front Bottoms,Cough It Out,Back on Top,0.256,0.925,D,-5.064,major,0.0694,8.48e-05,7.15e-06,0.336,0.574,203.087,260.24
+The Front Bottoms,HELP,Back on Top,0.553,0.858,E,-4.124,major,0.0279,1.42e-05,0.000119,0.113,0.748,134.031,225.64
+The Front Bottoms,Laugh Till I Cry,Back on Top,0.545,0.891,E,-3.713,major,0.0302,2.37e-05,0,0.186,0.533,100.789,227.627
+The Front Bottoms,Historic Cemetery,Back on Top,0.379,0.715,F,-5.9,major,0.0376,0.0465,0,0.135,0.14,139.428,259.253
+The Front Bottoms,The Plan (Fuck Jobs),Back on Top,0.413,0.87,A,-4.885,major,0.0349,0.00157,1.47e-06,0.113,0.8,100.816,218.133
+The Front Bottoms,Ginger,Back on Top,0.393,0.878,A#,-3.705,major,0.04,2.16e-05,0.000106,0.375,0.5,152.283,194.32
+The Front Bottoms,2YL,Back on Top,0.401,0.918,C#,-4.349,major,0.044,7.87e-05,1.31e-05,0.129,0.789,144.349,251.24
+The Front Bottoms,West Virginia,Back on Top,0.226,0.888,E,-4.181,major,0.123,0.000192,4.3e-05,0.0719,0.315,80.352,253.72
+The Front Bottoms,Plastic Flowers,Back on Top,0.536,0.939,D,-3.287,major,0.0853,0.000286,0.0707,0.185,0.489,142.937,248.04
+The Front Bottoms,Au Revoir (Adios),Talon Of The Hawk,0.437,0.716,F#,-7.122,major,0.0322,0.0367,0,0.0418,0.492,140.497,108.487
+The Front Bottoms,Skeleton,Talon Of The Hawk,0.42,0.931,A,-5.141,major,0.0679,0.0085,0,0.0991,0.697,147.489,215.107
+The Front Bottoms,Swear To God The Devil Made Me Do It,Talon Of The Hawk,0.409,0.931,F#,-5.323,major,0.0445,0.0212,1.52e-05,0.0823,0.681,143.05,211.983
+The Front Bottoms,Twin Size Mattress,Talon Of The Hawk,0.328,0.867,C#,-5.53,major,0.0812,0.00548,4.33e-06,0.103,0.336,145.25,264.677
+The Front Bottoms,Peach,Talon Of The Hawk,0.48,0.826,E,-5.6,major,0.058,0.204,0,0.107,0.462,139.876,185.853
+The Front Bottoms,Santa Monica,Talon Of The Hawk,0.392,0.936,B,-5.393,major,0.0581,0.0967,1.62e-06,0.172,0.717,154.886,247.563
+The Front Bottoms,The Feud,Talon Of The Hawk,0.259,0.971,G#,-4.804,major,0.0989,0.00716,0,0.393,0.708,121.561,194.821
+The Front Bottoms,Funny You Should Ask,Talon Of The Hawk,0.451,0.918,A,-5.637,major,0.0579,0.00525,1.41e-06,0.133,0.779,141.173,213.802
+The Front Bottoms,Tattooed Tears,Talon Of The Hawk,0.37,0.922,A,-6.019,major,0.0774,0.0051,1.25e-05,0.305,0.527,138.91,231.23
+The Front Bottoms,Lone Star,Talon Of The Hawk,0.395,0.92,C#,-6.041,major,0.0622,0.0647,3.51e-05,0.307,0.81,148.513,230.051
+The Front Bottoms,Backflip,Talon Of The Hawk,0.418,0.902,G#,-5.836,major,0.0768,0.0172,0,0.141,0.792,151.578,225.33
+The Front Bottoms,Everything I Own,Talon Of The Hawk,0.298,0.89,D#,-6.67,major,0.0515,0.0183,6.32e-06,0.309,0.706,149.12,223.859
+The Front Bottoms,Flashlight,The Front Bottoms,0.429,0.865,F#,-3.751,major,0.0625,0.00129,0,0.105,0.681,151.043,297.347
+The Front Bottoms,Maps,The Front Bottoms,0.641,0.833,A,-4.327,major,0.0326,0.00561,0,0.159,0.559,138.144,214.627
+The Front Bottoms,Looking Like You Just Woke Up,The Front Bottoms,0.449,0.948,E,-3.606,major,0.0867,0.0108,3.12e-06,0.081,0.785,177.983,122.187
+The Front Bottoms,Mountain,The Front Bottoms,0.688,0.744,E,-5.603,major,0.0412,0.00683,0.00274,0.0711,0.518,139.901,214.8
+The Front Bottoms,Rhode Island,The Front Bottoms,0.555,0.814,A,-5.743,major,0.0311,0.00193,1.69e-06,0.197,0.78,144.175,205.32
+The Front Bottoms,The Beers,The Front Bottoms,0.52,0.769,C#,-4.367,major,0.0552,0.155,0,0.185,0.623,139.383,212.253
+The Front Bottoms,Father,The Front Bottoms,0.585,0.782,D,-4.361,minor,0.0461,0.0252,0,0.108,0.591,133.011,229.933
+The Front Bottoms,Swimming Pool,The Front Bottoms,0.569,0.844,C#,-4.859,major,0.121,0.289,0,0.349,0.59,134.804,216.947
+The Front Bottoms,The Boredom Is The Reason I Started Swimming. It's Also The Reason I Started Sinking,The Front Bottoms,0.704,0.82,F#,-5.363,major,0.0356,0.0173,0,0.0831,0.746,135.022,258.8
+The Front Bottoms,Bathtub,The Front Bottoms,0.679,0.725,D,-7.196,major,0.0817,0.0488,0,0.705,0.455,132.973,191.867
+The Front Bottoms,Legit Tattoo Gun,The Front Bottoms,0.596,0.774,C#,-5.004,minor,0.032,0.00301,3.53e-05,0.177,0.331,133.979,258.093
+The Front Bottoms,Hooped Earings,The Front Bottoms,0.681,0.802,C#,-5.448,minor,0.0417,0.019,0.000961,0.0266,0.5,142.041,280.773
+The Front Bottoms,Today Is Not Real,Ann,0.468,0.648,E,-5.916,major,0.0262,0.00503,0.0144,0.307,0.34,81.021,178.118
+The Front Bottoms,Somebody Else,Ann,0.459,0.883,B,-6.23,major,0.0582,0.00373,4.06e-05,0.142,0.0862,132.93,266.793
+The Front Bottoms,I Think Your Nose Is Bleeding,Ann,0.565,0.806,A#,-4.646,major,0.0336,0.00228,0,0.247,0.711,125.017,234.552
+The Front Bottoms,Pale Beneath the Tan (Squeeze),Ann,0.547,0.855,B,-4.721,major,0.0743,0.00455,0,0.149,0.592,119.038,177.14
+The Front Bottoms,Lonely Eyes,Ann,0.526,0.822,F#,-5.135,major,0.0374,0.0396,0,0.34,0.515,105.001,181.735
+The Front Bottoms,Tie Dye Dragon,Ann,0.545,0.671,D,-7.076,major,0.0291,0.00823,0.0932,0.092,0.318,116.011,236.593
+The Front Bottoms,Flying Model Rockets,Rose,0.599,0.677,A,-6.551,major,0.0402,0.0534,0,0.0693,0.674,145.073,193.84
+The Front Bottoms,Lipstick Covered Magnet,Rose,0.463,0.745,A,-5.544,major,0.0437,0.00154,0,0.367,0.79,141.949,154.427
+The Front Bottoms,12 Feet Deep,Rose,0.328,0.932,F#,-5.612,major,0.0924,0.00961,0,0.36,0.534,101.36,225.253
+The Front Bottoms,Jim Bogart,Rose,0.274,0.49,D,-6.546,major,0.0301,0.141,0,0.158,0.58,79.326,197.973
+The Front Bottoms,Be Nice To Me,Rose,0.338,0.818,C,-5.666,major,0.0739,0.0231,0,0.129,0.696,118.635,167.307
+The Front Bottoms,Awkward Conversations,Rose,0.576,0.376,F,-8.017,major,0.12,0.366,0,0.0779,0.507,151.728,165.8
+The Front Bottoms,camouflage,Camouflage,0.602,0.809,E,-4.051,major,0.0538,0.00409,0.000367,0.263,0.508,135.958,265.01
+The Front Bottoms,everyone blooms,In Sickness & In Flames,0.554,0.772,E,-3.939,major,0.0368,0.00482,0,0.536,0.413,112.047,246.32
+The Front Bottoms,jerk,In Sickness & In Flames,0.534,0.885,C,-4.291,major,0.0879,0.0194,2.72e-06,0.461,0.54,122.244,233.88
+The Front Bottoms,the truth,In Sickness & In Flames,0.75,0.813,B,-4.797,major,0.0349,0.0972,0.00021,0.247,0.726,128.007,253.36
+The Front Bottoms,montgomery forever,In Sickness & In Flames,0.475,0.887,D,-3.884,major,0.114,0.00156,0.0743,0.291,0.5,149.214,279.107
+The Front Bottoms,the hard way,In Sickness & In Flames,0.316,0.647,E,-4.159,major,0.0402,0.026,0.0023,0.27,0.331,130.872,317.52
+The Front Bottoms,leaf pile,In Sickness & In Flames,0.401,0.904,B,-3.01,major,0.0552,0.000355,0,0.822,0.633,160.959,228.453
+The Front Bottoms,new song d,In Sickness & In Flames,0.455,0.937,F#,-3.895,minor,0.116,0.0535,2.11e-05,0.451,0.316,138.907,321.267
+The Front Bottoms,"Fairbanks, Alaska",In Sickness & In Flames,0.513,0.933,E,-3.332,major,0.0613,0.00324,0,0.272,0.405,142.024,234.16
+The Front Bottoms,love at first sight,In Sickness & In Flames,0.451,0.818,F#,-5.914,major,0.108,0.287,0.00478,0.171,0.725,101.952,240.72
+The Front Bottoms,bus beat,In Sickness & In Flames,0.624,0.946,A,-2.874,major,0.0745,0.0168,0,0.258,0.643,130.995,243.147
+The Front Bottoms,make way,In Sickness & In Flames,0.388,0.722,E,-5.114,major,0.0376,0.0219,1.29e-05,0.163,0.282,118.451,299.467
