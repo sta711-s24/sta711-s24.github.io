@@ -1,0 +1,38 @@
+---
+title: Cramer-Rao lower bound
+output:
+  xaringan::moon_reader:
+    css: "lab-slides.css"
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+editor_options: 
+  chunk_output_type: console
+---
+
+### Cramer-Rao lower bound
+
+---
+
+### Example
+
+.large[
+Suppose $X_1,...,X_n \overset{iid}{\sim} N(\mu, \sigma^2)$.
+]
+
+---
+
+### Sufficient statistics
+
+.large[
+.question[
+Given an unbiased estimator, can I improve its variance?
+]
+]
+
+---
+
+### Rao-Blackwell
+

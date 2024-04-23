@@ -11,6 +11,7 @@ April 22
   
 April 24
 : Cramer-Rao lower bound
+  : [Slides](https://sta711-s24.github.io/slides/lecture_39.pdf)
 
 April 26
 : Generalized method of moments
