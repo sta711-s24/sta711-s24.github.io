@@ -1,0 +1,20 @@
+---
+title: CRLB and Rao-Blackwell
+output:
+  xaringan::moon_reader:
+    css: "lab-slides.css"
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+editor_options: 
+  chunk_output_type: console
+---
+
+### Cramer-Rao lower bound
+
+---
+
+### Rao-Blackwell
+

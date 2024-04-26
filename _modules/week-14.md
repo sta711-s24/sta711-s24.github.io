@@ -14,4 +14,5 @@ April 24
   : [Slides](https://sta711-s24.github.io/slides/lecture_39.pdf)
 
 April 26
-: Generalized method of moments
+: CRLB and Rao-Blackwell
+  : [Slides](https://sta711-s24.github.io/slides/lecture_40.pdf)
