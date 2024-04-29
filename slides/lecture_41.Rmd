@@ -1,0 +1,16 @@
+---
+title: MLE with mis-specified model
+output:
+  xaringan::moon_reader:
+    css: "lab-slides.css"
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+editor_options: 
+  chunk_output_type: console
+---
+
+### Maximum likelihood with mis-specified models
+
